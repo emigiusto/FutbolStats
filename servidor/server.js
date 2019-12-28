@@ -15,14 +15,16 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-/*app.get('/players',controller.traerPlayers);
+app.get('/players',controller.traerPlayers);
+app.get('/posiciones',controller.infoTablaPosiciones);
+/*
 app.get('/matchup',controller.traerMatchup);
 app.get('/torneos',controller.traerTorneos);
 app.get('/torneosPorId',controller.traerTorneoPorId);
 app.get('/partidosPorId',controller.traerPartidosPorId);
 app.get('/jugadorPuntos',controller.traerPuntosJugador);
 app.get('/ganadosPerdidos',controller.traerGanadosPerdidos);
-app.get('/posiciones',controller.infoTablaPosiciones);
+
 app.get('/playerporId',controller.traerPlayerporId);
 app.get('/rachaPlayer',controller.traerRachaPlayer);
 app.get('/duos',controller.traerduo);

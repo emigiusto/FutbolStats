@@ -1,0 +1,114 @@
+#fotoPpalContainer{
+    height: 40vh;
+}
+
+#indexbutton a{
+    color:white
+}
+
+#estadisticasbutton a{
+    color:rgb(98, 161, 255)
+}
+
+#divisioncentral{
+    width: 70%;
+    margin:auto
+}
+
+        .tituloPrincipal {
+            font-size: 2.1rem;
+            text-align: center;
+            padding: 1.8rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Tabla Scrollable Fixed */
+    #tablaDuos tbody{
+        height:600px; overflow-y:scroll;
+    }
+
+    
+    #tablaDuos thead th{
+        position: sticky; top: 0;
+    }
+            /* Primeros */
+            #tablaDuos tbody tr:first-child td{
+                background-color:rgb(252, 214, 4);
+            }
+
+            #tablaDuos tbody tr:first-child::before{
+                background-color:rgb(252, 214, 4);
+            }
+            /* Segundos */
+            #tablaDuos tbody tr:nth-child(2) td{
+                background-color:rgb(255, 245, 111);
+            }
+
+            #tablaDuos tbody tr:nth-child(2)::before{
+                background-color:rgb(255, 245, 111);
+            } 
+            /* Terceros */
+            #tablaDuos tbody tr:nth-child(3) td{
+                background-color:rgb(255, 250, 174);
+            }
+
+            #tablaDuos tbody tr:nth-child(3)::before{
+                background-color:rgb(255, 250, 174);
+            } 
+
+    /* LOADER */
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 70vh;
+    right: 47vw
+  }
+  .displaynone{
+      display: none;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+
+@media only screen and (max-device-width: 567px) {
+    #tablaDuos {
+        width: 100%;
+    }  
+    #divisioncentral {
+    width: 90%;
+    margin: auto;
+    }
+
+    .tituloPrincipal {
+        font-size: 1.6rem;
+        padding: 0rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .table td, .table th {
+        vertical-align: middle;
+        padding: .35rem;
+        font-size: 0.65rem;
+        line-height: 1rem;
+    }
+
+    .loader {
+        width: 80px;
+        height: 80px;
+        top: 58vh;
+        right: 40vw;
+      }
+}
+            
+

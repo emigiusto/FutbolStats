@@ -1,0 +1,59 @@
+#fotoPpalContainer{
+    height: 40vh;
+}
+
+#indexbutton a{
+    color:white
+}
+#recordsbutton a{
+    color:rgb(98, 161, 255);
+}
+
+#divisioncentral{
+    width: 80%;
+    margin:auto;
+}
+
+    #alltime{
+        width: 80%;
+        margin:auto;
+        margin-bottom:3rem;
+    }
+.tituloPrincipal {
+    font-size: 2.1rem;
+    text-align: center;
+    padding: 1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+         /* Primeros */
+         #alltime tbody tr:first-child td{
+             background-color:rgba(38, 245, 19, 0.822);
+         }
+            
+         #alltime tbody tr:first-child::before{
+             background-color:rgba(38, 245, 19, 0.822);
+         }
+         /* Segundos */
+         #alltime tbody tr:nth-child(2) td{
+             background-color:rgba(129, 255, 103, 0.733);
+         }
+            
+         #alltime tbody tr:nth-child(2)::before{
+             background-color:rgba(129, 255, 103, 0.733);
+         } 
+         /* Terceros */
+         #alltime tbody tr:nth-child(3) td{
+             background-color:rgba(190, 253, 148, 0.733);
+         }
+         #alltime tbody tr:nth-child(3)::before{
+             background-color:rgba(190, 253, 148, 0.733);
+         } 
+
+ @media only screen and (max-device-width: 567px) {
+    #alltime {
+        width: 100%;
+    }  
+}
+            

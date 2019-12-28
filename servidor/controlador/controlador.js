@@ -1,8 +1,8 @@
 var con = require('../dba/conexionbd');
 
 
-function traercompetencias(req, res) {
-    var sql = "select * from competencias"
+function traerjugadores(req, res) {
+    var sql = "select * from jugador"
     
             con.query(sql, function(error, resultado) {
         if (error) {
@@ -33,5 +33,5 @@ function competencia(req, res) {
 }
 
 module.exports = {
-    traercompetencias: traercompetencias,
+    traerjugadores: traerjugadores,
 };

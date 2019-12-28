@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+        <title>Estadisticas</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/styleEstadisticas.css">
+        <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div id="header">
+            <div id="cabezal">
+                <div id="logoAndName">
+                    <a href="index.html">
+                      <img id="balllogo" src="img/ballLogo.png" alt="">
+                      <p>Palermo Basketball</p>
+                  </div>
+                <div id="barraNavegacion">
+                    <nav class="barraBoton" id="indexbutton"><a href="index.html">Home</a></nav>
+                    <nav class="barraBoton" id="edicionesbutton"><a href="otrasediciones.html">Otras Ediciones</a></nav>
+                    <nav class="barraBoton" id="recordsbutton"><a href="records.html">Records</a></nav>
+                    <nav class="barraBoton" id="estadisticasbutton"><a href="estadisticas.html">Stats</a></nav>
+                </div>
+            </div>
+            <div id="fotoPpalContainer">
+                <h1 id="slogan">Estadísticas</h1>
+            </div>
+        </div>
+
+        <div id="divisioncentral">
+          <div class="loader"></div>
+                <h1 class="tituloPrincipal">Duos</h1>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <table class="table table-striped table-hover sortable" id="tablaDuos">
+                      <thead>
+                        <tr>
+                          <th>Duo</th>
+                          <th data-toggle="tooltip" title="Partidos Ganados All-time" class="sorttable_numeric">PG</th>
+                          <th data-toggle="tooltip" title="Partidos Perdidos All-time" class="sorttable_numeric">PP</th>
+                          <th data-toggle="tooltip" title="Partidos Jugados All-time" class="sorttable_numeric">PJ</th>
+                          <th data-toggle="tooltip" title="Puntos Anotados Total" class="sorttable_numeric">P.A.</th>
+                          <th data-toggle="tooltip" title="Puntos Recibidos Total" class="sorttable_numeric">P.R.</th>
+                          <th data-toggle="tooltip" title="Puntos Anotados por Partido" class="sorttable_numeric">P.A. Por Partido</th>
+                          <th data-toggle="tooltip" title="Efectividad de victorias All-time" class="sorttable_numeric">Efectividad</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+        </div>
+        <script src="js/servidorInfo.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/matchup.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="js/jugador.js"></script>
+        <script src="js/torneo.js"></script>
+        <script src="js/partido.js"></script>
+        
+        <script src="js/listadoJugadores.js"></script>
+        <script src="js/listaTorneos.js"></script>
+
+        <script src="js/lib/combinatorics.js"></script>
+        <script src="js/vistaestadisticas.js"></script>
+        <script src="js/sorttable.js"></script>
+    </body>
+
+</html>
+
+

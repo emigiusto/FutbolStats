@@ -1,0 +1,562 @@
+body{
+    background-color: #EEEEEE;
+}
+
+.tituloSeccion{
+    text-align: center;
+}
+
+#indexbutton a{
+    color:white
+}
+
+.subtitle{
+    text-align: center;
+    margin:auto;
+    margin-top: 1.2rem;
+    margin-bottom: 1.4rem;
+    font-size: 1.8rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.726);
+    padding-top:1rem
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+.seccionPrincipal {
+    width: 80%;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.726);
+    margin:auto;
+}
+
+/* Titulo de sección */
+.TitleYLogo{
+    display: flex;
+    justify-content: left;
+}
+    /* Logo de sección */
+    div.TitleYLogo img{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+        width: 3%;
+        height: 3%;
+    }
+
+/* SECCIÓN PRESENTACIÓN */
+#presentación{
+    display: flex;
+    padding-left: 1.5rem;
+    margin-top:5rem;
+}
+    #datosPres{
+        width:65%;
+    }
+        /* Facultad de ... */
+        #tituloFacultad{
+            font-size: 2.7rem;
+            font-weight: 500;
+            padding:1rem;
+            margin-bottom: 2rem;
+        }
+        /* Titulo "Logros equipo" */
+        #logrosEquipo h2{
+            font-size: 1.7rem;
+            margin-left: 1rem;
+        }
+
+        /* Lista de logros */
+        ul#logrosLista{
+            margin-top:1rem;
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+            /* Lista de logros li*/
+            ul#logrosLista li{
+                margin-top: 0.6rem;
+                margin-bottom: 0.6rem;
+                width: 100%;
+                width: 95%;
+                line-height: 1.5rem;
+            }
+                /* Lista de logros imágen de premio*/
+                ul#logrosLista li img{
+                    width: 1.9rem;
+                    margin-left:2%;
+                }
+                /* Lista de logros descripción de premio*/
+                ul#logrosLista li span{
+                    margin-left:3%;
+                    font-size: 1.2rem;}
+
+    /* SECCION STATS IMPORTANTES */
+    #statsimp {
+        width: 80%;
+        padding-bottom: 2rem;
+        margin: auto;
+        display:flex;
+        justify-content: space-around;
+    }
+        #statsimp > div{
+            width: 21%;
+            border: 1px solid black;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+        }
+    /* seccion cards */
+
+    #contenedorcartas{
+        width:80%;
+        margin: auto;
+        padding-top: 3%;
+    }
+
+        .card-deck .card h5{
+            font-size: 1.4rem;
+            font-weight: 600;
+            width:95%;
+            text-align: center;
+            margin:auto;
+            margin-bottom:0.6rem;
+        }
+        .card-deck .card p {
+            font-size: 1rem;
+            margin-top: 0.8rem;
+            line-height: 1.3rem;
+        }
+
+
+/* Sección Alltime */
+        /* EFICIENCIA y ASISTENCIA*/
+        .cuadroMonoValor{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+            .titlecuadros{
+                font-size: 1.1rem;
+                margin-top:0.1rem;
+            }
+            .valuecuadros{
+                font-size: 2.2rem;
+                font-weight: 600;
+                margin-top:1rem;
+                margin-bottom:0.8rem;
+            }
+
+        /* GANADOS/PERDIDOS/JUGADOS */
+            div#partidosAlltime{
+                display: flex;
+            }
+                div#containerPGAlltime{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    border: 1px solid rgba(0,0,0,.125);
+                }
+                    div#containerPGAlltime > h3{
+                        font-size: 1.2rem;
+                    }
+                    div#containerPGAlltime > p{
+                        font-size: 2.2rem;
+                        font-weight: 600;
+                        margin-top:0.4rem;
+                        color: green
+                    }
+                div#containerPPyPJAlltime{
+                    width: 50%;
+                    border: 1px solid rgba(0,0,0,.125);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                    div#containerPPAlltime{
+                        width: 100%;
+                        border: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        height: 100%;
+                        text-align: center;
+                        border-bottom: 1px solid rgba(0,0,0,.125);
+                        padding-top:0.5rem;
+                        padding-bottom:0.5rem
+                    }
+                        div#containerPPAlltime > h3{
+                            font-size: 1rem;
+                        }
+                        div#containerPPAlltime > p{
+                            font-size: 1.8rem;
+                            font-weight: 600;
+                            margin-top:0.1rem;
+                            color: red
+                        }
+                    div#containerPJAlltime{
+                        width: 100%;
+                        border: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        height: 100%;
+                        text-align: center;
+                        padding-top:0.5rem;
+                        padding-bottom:0.5rem;
+                        
+                    }
+                        div#containerPJAlltime > h3{
+                            font-size: 1rem;
+                        }
+                        div#containerPJAlltime > p{
+                            font-size: 1.8rem;
+                            font-weight: 600;
+                            margin-top:0.1rem;
+                            color: blue
+                        }
+        /* OP y DP */
+        div.containeropdp{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,.125);
+            padding-top:1rem;
+            padding-bottom:1rem;
+        }
+            div.containeropdp > h3{
+                font-size: 1rem;
+            }
+            div.containeropdp > p{
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin-top:0.4rem;
+            }
+
+    /* PRIMERA SECCIÓN */  
+    
+            div#bio{
+                width: 40%;
+                flex: none;
+            }
+                div#bio >div{
+                    padding-left:1.3rem;
+                    padding-right:1.3rem;
+                }
+            div#bio >div >p.valuebox{
+                float:left;
+                width: 50%
+            }
+            #columnbiocontainer{
+                display: flex;
+
+            }
+                #c1bio{
+                    width: 45%
+                }
+                #c2bio{
+                    width: 50%;
+                }
+
+                div.subbio{
+                        width: 100%;
+                    }
+                .valuebox{
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+                    .valuebox p{
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        margin-top: 0.5rem;
+                        margin-bottom: 0.5rem;
+                    }
+                    #puesto{
+                        float:left;
+                    }
+                    #altura{
+                        float:left;
+                    }
+
+        /* RACHA */
+        #rachaactual{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom:0.8rem;
+        }
+            #rachaactual > p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }  
+            #rachaactual > p > p{
+                font-size: 1.8rem;
+                text-align: center;
+            }  
+                #rachaactual> p > img{
+                    width: 2.3rem;
+                    height: 1.8rem;
+                }  
+                #rachaactual > p >small{
+                    width: 100%;
+                    margin: auto;
+                    
+                    text-align: center;
+                }  
+
+                .subracha{
+                    float:left;
+                    margin-top: 0.8rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                }
+                    div#mejorracha.subracha >p{
+                        text-align: center;
+                        font-size: 1.4rem;
+                        color: green
+                    }
+                    div#peorracha.subracha >p{
+                        text-align: center;
+                        font-size: 1.4rem;
+                        color:red
+                    }
+                    .subracha >small{
+                        font-size: 0.8rem;
+                        margin-top: 0.5rem;
+                    }
+                    .subracha >small.text-muted{
+                        font-size: 0.8rem;
+                        margin-top: 0.5rem;
+                    }
+    /* MOMENTUM */ 
+            #momentum{
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+                #momentum > p{
+                    text-align: center;
+                    font-size: 1.8rem;
+                }
+                #momentum > small{
+                    text-align: center;
+                }
+        
+        #ultimos6{
+            text-align: center;
+            margin-top: 1.8rem;
+        }
+            #containerlast6{
+                display: flex;
+            }
+                .ult7box{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 33%;
+                }
+                    #containerlast6 > div.ult7box > p{
+                        font-size: 1.5rem;
+                        margin-bottom: 0.4rem;
+                    }
+                    #containerlast6 > div.ult7box > small{
+                        font-size: 1.2rem;
+                    }
+            /*TOOLTIP MOMENTUM*/
+
+    /* TABLE LAST 20 */ 
+        #ult20table{
+            width: 60%;
+            background-color: white;
+            margin: auto;
+            margin-bottom: 2rem;        
+        }
+
+    /* AWARDS */
+    #containerawards{
+        display: flex;
+        width: 80%;
+        margin: auto;
+        flex-wrap: wrap;
+        margin-top:2rem;
+        justify-content: space-around;
+    }
+        .awarditem{
+            width: 12%;
+            margin-bottom:1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right:2rem
+        }
+            .awarditem > img{
+                width: 60%;
+                margin: auto;
+            }
+            .awarditem > h3{
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-top: 1rem;
+                text-align: center;
+                line-height: 1.8rem;
+            }
+
+
+@media only screen and (max-device-width: 567px) {
+            
+    .seccionPrincipal {
+        width: 80%;
+    }
+    #presentación {
+        padding-left: 0;
+        margin-top: 4rem;
+    }
+    #fotoPres{
+    text-align: center;
+    width: 50%;}
+
+    #fotoPres img{
+        width:100%;
+        margin: auto;
+    }
+    #tituloFacultad {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #datosPres {
+        width: 75%;
+    }
+    #logrosEquipo h2 {
+        font-size: 1.1rem;
+        margin-left: 0;
+    }
+
+    ul#logrosLista {
+        margin-left: 0rem;
+    }
+    ul#logrosLista li span {
+        margin-left: 2%;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+    }
+            ul#logrosLista li img {
+                width: 1.3rem;
+                margin-left: 0%;
+            }
+
+    div#bio {
+        width: 100%;
+    }
+
+    #rachacard{
+        width: 48%;
+    }
+    #momentumcard{
+        width: 48%;
+    }
+    .text-muted {
+        font-size: 0.7rem;
+    }
+
+    .card-deck .card h5 {
+        font-size: 1.2rem;
+        margin-top:1rem
+    }
+    #rachaactual> p > img {
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-left: 1rem;
+    }
+    .valuecuadros {
+        font-size: 1.9rem;
+    }
+    #ultimos6 {
+        font-size: 0.8rem;
+        margin-top: 1.2rem;
+    }
+    .subracha {
+        margin-top: 0rem
+    }
+    div#peorracha.subracha >p {
+        font-size: 1.2rem;
+    }
+    div#mejorracha.subracha >p {
+        font-size: 1.2rem;
+    }
+    .subracha >small.text-muted {
+        font-size: 0.5rem;
+    }
+
+    div#eficienciaAlltime{
+        width: 48%;
+    }
+    div#asistenciaAlltime{
+        width: 48%;
+    }
+    div#partidosAlltime{
+        width: 48%;
+        margin-top: 1.4rem;
+    }
+    div#opydp{
+        width: 48%;
+        margin-top: 1.5rem;
+    }
+        div.containeropdp {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+        }
+        div.containeropdp > h3 {
+            line-height: 1.3rem;
+        }
+    #statsimp {
+        flex-wrap: wrap;
+    }
+    .cuadroMonoValor{
+        padding:0.8rem
+    }
+    
+    #ult20table {
+        width: 90%;
+    }
+        #ult20table th{
+            font-size: 0.9rem;
+        }
+        #ult20table td{
+            font-size: 0.9rem;
+        }
+    /* AWARDS */
+
+    .awarditem{
+        width: 32%;
+        margin-right:0
+    }
+        .awarditem > img{
+            width: 40%;
+        }
+        .awarditem > h3{
+            font-size: 1rem;
+        }
+    
+}

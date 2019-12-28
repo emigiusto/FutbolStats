@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Emiliano Giusto</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/styleJugador.css">
+        <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div id="header">
+            <div id="cabezal">
+                    <div id="logoAndName">
+                <a href="index.html">
+                    <img id="balllogo" src="img/ballLogo.png" alt="">
+                    <p>Palermo Basketball</p>
+                </div>
+                <div id="barraNavegacion">
+                    <nav class="barraBoton" id="indexbutton"><a href="index.html">Home</a></nav>
+                    <nav class="barraBoton" id="edicionesbutton"><a href="otrasediciones.html">Otras Ediciones</a></nav>
+                    <nav class="barraBoton" id="recordsbutton"><a href="records.html">Records</a></nav>
+                    <nav class="barraBoton" id="estadisticasbutton"><a href="estadisticas.html">Stats</a></nav>
+                </div>
+            </div>
+        </div>
+        
+        <div id="divisioncentral">
+            <!--SECCIÓN PRESENTACIÓN-->
+            <div class="seccionPrincipal" id="presentación">
+                <div id="datosPres">
+                    <h1 id="tituloFacultad">-</h1>
+                    <div id="logrosEquipo">
+                        <h2>Mejores Logros</h2>
+                        <ul id="logrosLista">
+                            <li id="logro1"><img src="" alt="">
+                                <span>-</span>
+                            </li>
+                            <li id="logro2"><img src="" alt="">
+                                <span>-</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="fotoPres">
+                    <img src="img/profiles/luka.jpg" alt="">  
+                </div>
+            </div>
+                <!-- Seccion Bio y Racha y momentum-->
+                <div id="bioyracha">
+                    <div class="card-deck" id="contenedorcartas">
+                        <!-- BIO-->
+                        <div class="card" id="bio">
+                          <div class="card-body">
+                            <h5 class="card-title">BIO</h5>
+                                <div id="columnbiocontainer">
+                                    <div id="c1bio"> 
+                                        <div id="altura" class="valuebox subbio">
+                                            <p>1.82m</p>
+                                            <small class="text-muted">ALTURA</small>
+                                        </div>
+                                        <div id="fechanac" class="valuebox subbio">
+                                            <p>26/12/1992</p>
+                                            <small class="text-muted">FECHA NACIMIENTO</small>
+                                        </div>
+                                        <div id="lugarnac"class="valuebox subbio">
+                                            <p>Mar del Plata</p>
+                                            <small class="text-muted">LUGAR NACIMIENTO</small>
+                                        </div>
+                                    </div>
+                                    <div id="c2bio">
+                                        <div id="puesto" class="valuebox subbio">
+                                            <p>Alero</p>
+                                            <small class="text-muted">PUESTO</small>
+                                        </div>
+                                        <div id="jugada" class="valuebox">
+                                            <p>Tiro a 45°</p>
+                                            <small class="text-muted">MEJOR JUGADA</small>
+                                        </div>
+                                    </div>
+                                </div>
+                          </div>
+                        </div>
+        
+                        <!-- RACHA-->
+                        <div id="rachacard" class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">RACHA</h5>
+                            <div id="rachaactual" class="valuebox">
+                                <p></p>
+                                <small class="text-muted">ACTUAL</small>
+                            </div>
+                            <div id="mejorracha" class="valuebox subracha">
+                                <p>+??</p>
+                                <small id="mejorrachafecha">???</small>
+                                <small class="text-muted">MEJOR RACHA</small>
+                            </div>
+                            <div id="peorracha" class="valuebox subracha">
+                                <p>-??</p>
+                                <small id="peorrachafecha">?????</small>
+                                <small class="text-muted">PEOR RACHA</small>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- MOMENTUM-->
+                        <div  id="momentumcard" class="card">
+                            <div class="card-body">
+                              <h5 data-toggle="tooltip" title="Momentum es un indicador que toma en cuenta tus victorías y puntos anotados en los últimos 6 partidos globales. Para tener momentum debes haber participado en mas de 3 juegos de los ultimos 6" class="card-title">MOMENTUM</h5>
+                              <div id="momentum" class="valuebox">
+                                  <p>80/100</p>
+                                  <small class="text-muted">ACTUAL</small>
+                              </div>
+                              <p id="ultimos6" class="card-text">ÚLTIMOS 6 JUEGOS</p>
+                              <div id="containerlast6">
+                                  <div id="PGult6" class="ult7box">
+                                    <p>2</p>
+                                    <small class="text-muted">PG</small>
+                                  </div>
+                                  <div id="PPult6" class="ult7box">
+                                    <p>3</p>
+                                    <small class="text-muted">PP</small>
+                                  </div>
+                                  <div id="PJult6" class="ult7box">
+                                    <p>5</p>
+                                    <small class="text-muted">PJ</small>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seccion Alltime-->
+                <h1 class="subtitle"> All-time Stats</h1>
+                <div id="statsimp">
+                    <div class="cuadroMonoValor" id="eficienciaAlltime">
+                        <h1 class="titlecuadros">EFICIENCIA</h1>
+                        <p class="valuecuadros">64%</p>
+                    </div>
+                    <div class="cuadroMonoValor" id="asistenciaAlltime">
+                            <h1 class="titlecuadros">ASISTENCIA</h1>
+                            <p class="valuecuadros">82%</p>
+                    </div>
+                    <div id="partidosAlltime"> 
+                        <div id="containerPGAlltime"><h3>PG</h3><p>8</p></div>
+                        <div id="containerPPyPJAlltime">
+                            <div id="containerPPAlltime"><h3>PP</h3><p>4</p></div>
+                            <div id="containerPJAlltime"><h3>PJ</h3><p>12</p></div>
+                        </div>
+                    </div>
+                    <div id="opydp">
+                            <div class="containeropdp" id="containerOP">
+                                <h3 data-toggle="tooltip" title="Offensive Power es un indicador de los puntos que anotaron los equipos en donde participaste all-time. El máximo es 10 y el mínimo es 0. El valor -1 indica que no se encuentra contabilizado porque el jugador posee menos de 40% asistencia All-time" >OFFENSIVE POWER</h3><p>8.4</p>
+                            </div>
+                            <div class="containeropdp" id="containerDP">
+                                <h3 data-toggle="tooltip" title="Defensive Power es un indicador de los puntos que recibieron los equipos en donde participaste all-time. El máximo es 10 y el mínimo es 0. El valor -1 indica que no se encuentra contabilizado porque el jugador posee menos de 40% asistencia All-time">DEFENSIVE POWER</h3><p>6.4</p>
+                            </div>
+                    </div>
+                </div>
+                <!-- Seccion Ultimos 20 partidos-->
+                <h1 class="subtitle">Últimos 20 partidos</h1>
+                <div id="ult20table">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Resultado</th>
+                            <th scope="col">Puntos Convertidos</th>
+                            <th scope="col">Puntos Recibidos</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+        <div id="footer">
+            <div id="logoAndName">
+
+            </div>
+            <div id="links">
+
+            </div>
+        </div>
+        <script src="js/servidorInfo.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="js/vistajugador.js"></script>
+    </body>
+
+</html>

@@ -16,7 +16,7 @@ function traerjugadores(req, res) {
 }
 
 function traerPlayers(req, res) {
-    var sql = "select player.id, player.nombre, player.apellido, jugadorresultado.resultado, player.foto, player.bestmove, player.fechainicio, "
+    var sql = "select player.id, player.nombre, player.apellido, player.foto, player.bestmove, player.fechainicio, "
             + "SUM(case when jugadorresultado.resultado = 0 then partidos.puntosperdedor else partidos.puntosganador end) as 'puntosfavor', "
             + "SUM(case when jugadorresultado.resultado = 1 then partidos.puntosperdedor else partidos.puntosganador end) as 'puntoscontra', "
             + "(COUNT(jugadorresultado.resultado)+player.pg2018sincontar+player.pp2018sincontar) as 'partidosjugadosTotal', "

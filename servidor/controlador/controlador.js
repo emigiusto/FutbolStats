@@ -1,20 +1,5 @@
 var con = require('../dba/conexionbd');
 
-
-function traerjugadores(req, res) {
-    var sql = "select * from player"
-    
-            con.query(sql, function(error, resultado) {
-        if (error) {
-            console.log("Hubo un error en la consulta", error.message);
-            return res.status(404).send("Hubo un error en la consulta");
-        }
-
-
-        res.send(JSON.stringify(resultado));
-    });
-}
-
 function traerPlayers(req, res) {
     var sql = "select player.id, player.nombre, player.apellido, player.foto, player.bestmove, player.fechainicio, "
             + "SUM(case when jugadorresultado.resultado = 0 then partidos.puntosperdedor else partidos.puntosganador end) as 'puntosfavor', "
@@ -135,6 +120,6 @@ function competencia(req, res) {
 }
 
 module.exports = {
-    traerjugadores: traerjugadores,
-    traerPlayers: traerPlayers
+    traerPlayers: traerPlayers,
+    infoTablaPosiciones:infoTablaPosiciones
 };

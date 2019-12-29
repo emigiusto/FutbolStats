@@ -2,14 +2,13 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
-        <title>Estadisticas</title>
+        <title>Records</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
         <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/styleEstadisticas.css">
+        <link rel="stylesheet" href="../styles/styleRecords.css">
         <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
 
     </head>
-
     <body>
         <div id="header">
             <div id="cabezal">
@@ -26,33 +25,40 @@
                 </div>
             </div>
             <div id="fotoPpalContainer">
-                <h1 id="slogan">Estadísticas</h1>
+                <h1 id="slogan">Records</h1>
             </div>
         </div>
 
         <div id="divisioncentral">
-          <div class="loader"></div>
-                <h1 class="tituloPrincipal">Duos</h1>
+            <div id="contenedorAlltimeTable">
+                <h1 class="tituloPrincipal" id="posicionestitulo">All-Time Table</h1>
                 <div class="panel panel-default">
-                  <div class="panel-body">
-                    <table class="table table-striped table-hover sortable" id="tablaDuos">
-                      <thead>
-                        <tr>
-                          <th>Duo</th>
-                          <th data-toggle="tooltip" title="Partidos Ganados All-time" class="sorttable_numeric">PG</th>
-                          <th data-toggle="tooltip" title="Partidos Perdidos All-time" class="sorttable_numeric">PP</th>
-                          <th data-toggle="tooltip" title="Partidos Jugados All-time" class="sorttable_numeric">PJ</th>
-                          <th data-toggle="tooltip" title="Puntos Anotados Total" class="sorttable_numeric">P.A.</th>
-                          <th data-toggle="tooltip" title="Puntos Recibidos Total" class="sorttable_numeric">P.R.</th>
-                          <th data-toggle="tooltip" title="Puntos Anotados por Partido" class="sorttable_numeric">P.A. Por Partido</th>
-                          <th data-toggle="tooltip" title="Efectividad de victorias All-time" class="sorttable_numeric">Efectividad</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                    </table>
-                  </div>
+                    <div class="panel-body">
+                        <table id="alltime" class="table table-striped table-hover sortable alltime">
+                            <thead>
+                            <tr>
+                                <th >Nombre</th>
+                                <th class="sorttable_numeric">PG</th>
+                                <th class="sorttable_numeric">PP</th>
+                                <th class="sorttable_numeric">PJ</th>
+                                <th class="sorttable_numeric">Efectividad</th>
+                                <th class="sorttable_numeric">Asistencia</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Nombre 1</td>
+                                <td>PG 2</td>
+                                <td>PP 3</td>
+                                <td>PJ 4</td>
+                                <td>Efectividad</td>
+                                <td>Asistencia 3</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+            </div>
         </div>
         <script src="js/servidorInfo.js"></script>
         <script src="js/jquery.js"></script>
@@ -65,12 +71,9 @@
         
         <script src="js/listadoJugadores.js"></script>
         <script src="js/listaTorneos.js"></script>
-
-        <script src="js/lib/combinatorics.js"></script>
-        <script src="js/vistaestadisticas.js"></script>
-        <script src="../js/lib/sorttable.js"></script>
+        <script src="js/vistaRecords.js"></script>
+        <script src="js/sorttable.js"></script>
     </body>
+    
 
 </html>
-
-

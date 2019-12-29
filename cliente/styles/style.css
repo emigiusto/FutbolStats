@@ -486,18 +486,18 @@ body{
         border-top: 1px solid grey;
         font-weight: 600;
     }
-        #posicionestitulo{
+        .posicionestitulo{
             margin-top: 0;
         }
 
-    #tablePosiciones{
+    .posicionestable{
         width:80%;
         margin:auto;
     }
-        #tablePosiciones th{
+        .posicionestable th{
             font-size: 1.1rem;
         }
-        #tablePosiciones td{
+        .posicionestable td{
             font-size: 1.1rem;
         }
         table{
@@ -609,7 +609,7 @@ body{
                         width: 7%;
                         vertical-align: middle;
                     }
-                    #tablePosiciones > tbody > tr > td > a{
+                    .posicionestable > tbody > tr > td > a{
                         text-decoration: none;
                         color: black;
                         font-weight: 600;
@@ -687,52 +687,52 @@ body{
                 }
 
                         /* Primeros */
-                        #tablePosiciones tbody tr:first-child td{
+                        .posicionestable tbody tr:first-child td{
                             background-color:rgba(38, 245, 19, 0.822);
                         }
             
-                        #tablePosiciones tbody tr:first-child::before{
+                        .posicionestable tbody tr:first-child::before{
                             background-color:rgba(38, 245, 19, 0.822);
                         }
                         /* Segundos */
-                        #tablePosiciones tbody tr:nth-child(2) td{
+                        .posicionestable tbody tr:nth-child(2) td{
                             background-color:rgba(129, 255, 103, 0.733);
                         }
             
-                        #tablePosiciones tbody tr:nth-child(2)::before{
+                        .posicionestable tbody tr:nth-child(2)::before{
                             background-color:rgba(129, 255, 103, 0.733);
                         } 
                         /* Terceros */
-                        #tablePosiciones tbody tr:nth-child(3) td{
+                        .posicionestable tbody tr:nth-child(3) td{
                             background-color:rgba(190, 253, 148, 0.733);
                         }
-                        #tablePosiciones tbody tr:nth-child(3)::before{
+                        .posicionestable tbody tr:nth-child(3)::before{
                             background-color:rgba(190, 253, 148, 0.733);
                         } 
 
                 /*Desde abajo*/
                         /* Primeros */
-                        #tablePosiciones tbody tr:last-child td{
+                        .posicionestable tbody tr:last-child td{
                             background-color:rgb(231, 45, 45);
                         }
             
-                        #tablePosiciones tbody tr:last-child::before{
+                        .posicionestable tbody tr:last-child::before{
                             background-color:rgb(231, 45, 45);
                         }
                         /* Segundos */
-                        #tablePosiciones tbody tr:nth-last-child(2) td{
+                        .posicionestable tbody tr:nth-last-child(2) td{
                             background-color:rgb(212, 91, 91);
                         }
             
-                        #tablePosiciones tbody tr:nth-last-child(2)::before{
+                        .posicionestable tbody tr:nth-last-child(2)::before{
                             background-color:rgb(212, 91, 91);
                         } 
                         /* Terceros */
-                        #tablePosiciones tbody tr:nth-last-child(3) td{
+                        .posicionestable tbody tr:nth-last-child(3) td{
                             background-color:rgb(236, 149, 149);
                         }
             
-                        #tablePosiciones tbody tr:nth-last-child(3)::before{
+                        .posicionestable tbody tr:nth-last-child(3)::before{
                             background-color:rgb(236, 149, 149);
                         } 
     /*   PALERMO AWARDS   */
@@ -880,11 +880,11 @@ body{
                 margin-top: 1rem;
                 margin-bottom: 0.5rem;
             }
-        #tablePosiciones {
+        .posicionestable {
             width: 90%;
         }
 
-            #tablePosiciones  th {
+            .posicionestable  th {
                 font-size: 0.8rem;
                 vertical-align: middle;
                 padding: .35rem;
@@ -901,7 +901,7 @@ body{
                 padding: .35rem;
                 font-size: 0.8rem;
             }
-            #tablePosiciones td , .table th {
+            .posicionestable td , .table th {
                 vertical-align: middle;
                 padding: .35rem;
                 font-size: 0.8rem;

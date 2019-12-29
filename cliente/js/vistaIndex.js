@@ -6,15 +6,14 @@ function iniciarIndex() {
     $('[data-toggle="tooltip"]').tooltip();
     listadoTorneos.actualizarTorneos();
     listadoJugadores.actualizarJugadores();
-    llenarTablaPosiciones();
-    cargarJugadoresDeck();
-    cargarawards();
-      
+    llenarTablaPosiciones("#tablePosicionesGeoFutbol > tbody",1);
+    llenarTablaPosiciones("#tablePosicionesFutbolMixto > tbody",2);
+    //cargarJugadoresDeck();
 }
 
 
-function llenarTablaPosiciones() {
-      $.getJSON(servidor + "/posiciones?torneoId=4", //HARDCODEADO EL 4!
+function llenarTablaPosiciones(nombredom,torneoid) {
+      $.getJSON(servidor + "/posiciones?torneoId="+ torneoid,
       function(playersPorTorneo) {
           
                   //CALCULO PROMEDIO DE PUNTOS A FAVOR Y CONTRA DE TODOS
@@ -65,6 +64,7 @@ function llenarTablaPosiciones() {
                                       bestmove: playersPorTorneo.playerstats[index].bestmove,
                                       ganados: playersPorTorneo.playerstats[index].ganados,
                                       perdidos: playersPorTorneo.playerstats[index].perdidos,
+                                      empatados: playersPorTorneo.playerstats[index].empatados,
                                       partidosTotales: playersPorTorneo.playerstats[index].partidosTotales,
                                       eficiencia: playersPorTorneo.playerstats[index].eficiencia,
                                       asistencia: playersPorTorneo.playerstats[index].asistencia,
@@ -92,12 +92,13 @@ function llenarTablaPosiciones() {
                     
             var lineaTabla = 
               '<tr><td scope="row"><a href="jugador.html?id=' + element.jugadorId +'">' + element.nombre + " " +element.apellido + '</a></th><td>'+ element.ganados +'</td><td>'
-              + element.perdidos +'</td><td>' + element.partidosTotales + '</td><td>' + addZeroes(Math.round(element.eficiencia*100 * 10) / 10) + '%</td><td>' 
+              + element.perdidos +'</td><td>'+ element.empatados +'</td><td>' + element.partidosTotales + '</td><td>' + addZeroes(Math.round(element.eficiencia*100 * 10) / 10) + '%</td><td>' 
               + addZeroes(offpowerCorr) + '</td><td>' + addZeroes(defpowerCorr) + '</td><td>' + element.momentum + '</td><td>' + addZeroes(Math.round(element.asistencia*100 * 10) / 10) + '%</td></tr>'
               
               contenidoTabla = contenidoTabla + lineaTabla
           }
-           $("#tablePosiciones > tbody").html(contenidoTabla)
+          
+           $(nombredom).html(contenidoTabla)
               var myTH = document.getElementsByTagName("th")[4];
               sorttable.innerSortFunction.apply(myTH, []);
               sorttable.innerSortFunction.apply(myTH, []);

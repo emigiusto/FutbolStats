@@ -2,7 +2,7 @@ use `heroku_de86678f01af14e`;
 
 DROP TABLE IF EXISTS `jugador`;
 CREATE TABLE `jugador` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+ `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(70) NOT NULL,
   `apellido` varchar(70) NOT NULL,
   `alias` varchar(200),

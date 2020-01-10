@@ -1,4 +1,4 @@
-select player.id, player.nombre, player.apellido, player.foto, player.bestmove, player.fechainicio, 
+select player.id, player.nombre, player.apellido,player.alias, player.foto, player.fechainicio,
 SUM(case when (jugadorresultado.resultado = 0 or jugadorresultado.resultado = 2) then partidos.puntosperdedor else partidos.puntosganador end) as 'puntosfavor', 
 SUM(case when (jugadorresultado.resultado = 1 or jugadorresultado.resultado = 2) then partidos.puntosperdedor else partidos.puntosganador end) as 'puntoscontra',
 COUNT(jugadorresultado.resultado) as 'partidosjugadosTotal', 
@@ -7,6 +7,7 @@ COUNT(jugadorresultado.resultado) as 'partidosjugadosTotal',
 (TW.ganadosalltime) as 'ganadosalltime', 
 (TL.perdidosalltime) as 'perdidosalltime', 
 IFNULL((TE.empatadosAlltime), 0) as 'empatadosalltime', 
+SUM(jugadorresultado.golesjugador) as 'golesindividuales',
 (((TW.ganadosalltime)+(TL.perdidosalltime)+IFNULL((TE.empatadosAlltime), 0))/(partidostotalestodos.total)) as 'asistencia',  
 (TW.ganadosalltime)/((TW.ganadosalltime) +(TL.perdidosalltime)+IFNULL((TE.empatadosAlltime), 0)) as 'eficiencia',
  tablemomentum.momentum, 
@@ -27,4 +28,5 @@ IFNULL((TE.empatadosAlltime), 0) as 'empatadosalltime',
     left outer join (select player.id, jugadorresultado.resultado, count(jugadorresultado.resultado) as 'perdidosAlltime' 
 			from player join jugadorresultado on player.id = jugadorresultado.jugador_id 
 				where jugadorresultado.resultado = 0 group by player.id, jugadorresultado.resultado) as TL on player.id = TL.id
-    left outer join (select player.id, jugadorresultado.resultado, count(jugadorresultado.resultado) as 'empatadosAlltime' from player join jugadorresultado on player.id = jugadorresultado.jugador_id where jugadorresultado.resultado = 2 group by player.id, jugadorresultado.resultado) as TE on player.id = TE.id group by player.id;
+    left outer join (select player.id, jugadorresultado.resultado, count(jugadorresultado.resultado) as 'empatadosAlltime' from player join jugadorresultado on player.id = jugadorresultado.jugador_id where jugadorresultado.resultado = 2 group by player.id, jugadorresultado.resultado) as TE on player.id = TE.id 
+    group by player.id;

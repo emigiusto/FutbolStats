@@ -1,4 +1,3 @@
-SET @torneoid = 3, @tipotorneo = 'Geofobal'; 
 SELECT 
     jugador.id,
     jugador.nombre,
@@ -57,8 +56,8 @@ right outer join
 				join partidos on jugadorresultado.partido_id = partidos.id
 				join torneos on partidotorneo.torneo_id = torneos.id 
                 left outer join (SELECT count(*) as totalpartidos from partidotorneo join torneos on partidotorneo.torneo_id = torneos.id  
-						where torneos.tipotorneo = @tipotorneo) as totalpartidosalltime on 1=1
-				where torneos.tipotorneo = @tipotorneo
+						where torneos.tipotorneo = 'Geofobal') as totalpartidosalltime on 1=1
+				where torneos.tipotorneo = 'Geofobal' 
 				group by jugadorresultado.jugador_id) as tablaalltime on tablaalltime.jugador_id = jugador.id
                 
 left outer join

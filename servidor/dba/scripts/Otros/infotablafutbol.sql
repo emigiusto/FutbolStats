@@ -1,3 +1,4 @@
+SET @torneoid = 3;
 SELECT 
     jugador.id,
     jugador.nombre,
@@ -56,14 +57,16 @@ right outer join
 				join partidos on jugadorresultado.partido_id = partidos.id
 				join torneos on partidotorneo.torneo_id = torneos.id 
                 left outer join (SELECT count(*) as totalpartidos from partidotorneo join torneos on partidotorneo.torneo_id = torneos.id  
-						where torneos.tipotorneo = 'Geofobal') as totalpartidosalltime on 1=1
-				where torneos.tipotorneo = 'Geofobal' 
+						where torneos.tipotorneo = (select tipotorneo from torneos where id = @torneoid)) as totalpartidosalltime on 1=1
+				where torneos.tipotorneo = (select tipotorneo from torneos where id = @torneoid) 
 				group by jugadorresultado.jugador_id) as tablaalltime on tablaalltime.jugador_id = jugador.id
                 
 left outer join
 	(SELECT count(*) as totalpartidos 
     from partidotorneo where torneo_id = @torneoid) as totalpartidostorneo on 1=1
-where jugadortorneo.torneo_id = @torneoid;
+where jugadortorneo.torneo_id = @torneoid
+order by puntos desc, ganados desc, perdidos asc, puntosporpartido desc
+
 
 
 

@@ -8,7 +8,7 @@ function iniciarIndex() {
 
 
 function llenarTablaPosiciones(nombredom,torneoid) {
-      $.getJSON(servidor + "/posiciones?torneoId="+ torneoid,
+      $.getJSON(servidor + "/posiciones/"+ torneoid,
       function(jugadorstats) {
           
                   //SUMO PUNTOS A FAVOR Y CONTRA DE TODOS LOS QUE TENGAN >= 0.4 DE asistenciaalltime
@@ -17,7 +17,7 @@ function llenarTablaPosiciones(nombredom,torneoid) {
                     
                     for (let index = 0; index < jugadorstats.length; index++) {
                       
-                        if (jugadorstatss[index].asistenciaalltime >= 0.4){
+                        if (jugadorstats[index].asistenciaalltime >= 0.4){
                           puntosfavorpartido.push(jugadorstats[index].PA);
                           puntoscontrapartido.push(jugadorstats[index].PAC);
                         }
@@ -36,7 +36,7 @@ function llenarTablaPosiciones(nombredom,torneoid) {
                         //Recorro players y aplico a resultado los offpower y defpower
                 for (let index = 0; index < jugadorstats.length; index++) {
                     //OFF Y DEF POWER
-                    if (jugadorstats.asistenciaAlltime < 0.4) {
+                    if (jugadorstats.asistenciaalltime < 0.4) {
                           jugadorstats.offpower = -1
                           jugadorstats.defpower = -1
                     } else {
@@ -79,23 +79,23 @@ function llenarTablaPosiciones(nombredom,torneoid) {
                     {var offpowerCorr = -1} else { var offpowerCorr = Math.round(element.offpower* 10) / 10;}; 
                 if (typeof element.defpower !== 'number')
                     {var defpowerCorr = -1} else { var defpowerCorr = Math.round(element.defpower* 10) / 10;}; 
-                    
-            var lineaTabla = 
-              '<tr><td scope="row"><a href="jugador.html?id=' + element.jugadorId +'">' + element.nombre + " " +element.apellido 
-              + '</a></th><td>'+ element.ganados +'</td><td>'
-              + element.perdidos +'</td><td>'
-              + element.empatados +'</td><td>' 
-              + element.totales + '</td><td>' 
-              + element.puntos + '</td><td>' 
-              + element.puntosporpartido + '</td><td>'
-              + element.golesjugadortorneo + '</td><td>'
-              + addZeroes(Math.round(element.eficienciaganados*100 * 10) / 10) + '%</td><td>'
-              + addZeroes(offpowerCorr) + '</td><td>' 
-              + addZeroes(defpowerCorr) + '</td><td>' 
-              + element.momentum + '</td><td>' 
-              + addZeroes(Math.round(element.asistenciatorneo*100 * 10) / 10) + '%</td></tr>'
-              
-              contenidoTabla = contenidoTabla + lineaTabla
+            
+            if (element.asistenciatorneo>=0.4){
+                var lineaTabla = 
+                  '<tr><td scope="row"><a href="jugador.html?id=' + element.jugadorId +'">' + element.nombre + " " +element.apellido 
+                  + '</a></th><td>'+ element.ganados +'</td><td>'
+                  + element.perdidos +'</td><td>'
+                  + element.empatados +'</td><td>' 
+                  + element.totales + '</td><td>' 
+                  + element.puntos + '</td><td>' 
+                  + Math.round(element.puntosporpartido* 10) / 10 + '</td><td>'
+                  + element.golesjugadortorneo + '</td><td>'
+                  + addZeroes(Math.round(element.eficienciaganados*100 * 10) / 10) + '%</td><td>'
+                  + addZeroes(offpowerCorr) + '</td><td>' 
+                  + addZeroes(defpowerCorr) + '</td><td>' 
+                  + addZeroes(Math.round(element.asistenciatorneo*100 * 10) / 10) + '%</td></tr>'
+            } else {var lineaTabla = ''}
+                  contenidoTabla = contenidoTabla + lineaTabla
           }
 
           $(nombredom).html(contenidoTabla)

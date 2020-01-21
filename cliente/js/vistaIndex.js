@@ -36,15 +36,15 @@ function llenarTablaPosiciones(nombredom,torneoid) {
                         //Recorro players y aplico a resultado los offpower y defpower
                 for (let index = 0; index < jugadorstats.length; index++) {
                     //OFF Y DEF POWER
-                    if (jugadorstats.asistenciaalltime < 0.4) {
-                          jugadorstats.offpower = -1
-                          jugadorstats.defpower = -1
+                    if (jugadorstats[index].asistenciaalltime < 0.4) {
+                          jugadorstats[index].offpower = -1
+                          jugadorstats[index].defpower = -1
                     } else {
                         jugadorstats[index].offpower = ((jugadorstats[index].PA-minPF)/rangePF)*10
                         jugadorstats[index].defpower = -((jugadorstats[index].PAC-maxPC)/rangePC)*10
                     }
                 }
-            console.log(jugadorstats)
+            
             //var playersarray=[]
 
           /*for (let index = 0; index < playersPorTorneo.playerstats.length; index++) {

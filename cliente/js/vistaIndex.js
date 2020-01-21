@@ -1,31 +1,25 @@
-
-
 $(document).ready(iniciarIndex());
 
 function iniciarIndex() {
     $('[data-toggle="tooltip"]').tooltip();
-    listadoTorneos.actualizarTorneos();
-    listadoJugadores.actualizarJugadores();
-    llenarTablaPosiciones("#tablePosicionesGeoFutbol > tbody",1);
-    llenarTablaPosiciones("#tablePosicionesFutbolMixto > tbody",2);
+    llenarTablaPosiciones("#tablePosicionesGeoFutbol > tbody",3);
     //cargarJugadoresDeck();
 }
 
 
 function llenarTablaPosiciones(nombredom,torneoid) {
       $.getJSON(servidor + "/posiciones?torneoId="+ torneoid,
-      function(playersPorTorneo) {
+      function(jugadorstats) {
           
-                  //CALCULO PROMEDIO DE PUNTOS A FAVOR Y CONTRA DE TODOS
+                  //SUMO PUNTOS A FAVOR Y CONTRA DE TODOS LOS QUE TENGAN >= 0.4 DE asistenciaalltime
                     var puntosfavorpartido = [];
                     var puntoscontrapartido = [];
                     
-                    for (let index = 0; index < playersPorTorneo.playerstats.length; index++) {
+                    for (let index = 0; index < jugadorstats.length; index++) {
                       
-                        if (playersPorTorneo.playerstats[index].asistenciaAlltime > 0.4){
-
-                        puntosfavorpartido.push(playersPorTorneo.playerstats[index].PA);
-                        puntoscontrapartido.push(playersPorTorneo.playerstats[index].PAC);
+                        if (jugadorstatss[index].asistenciaalltime >= 0.4){
+                          puntosfavorpartido.push(jugadorstats[index].PA);
+                          puntoscontrapartido.push(jugadorstats[index].PAC);
                         }
                     }
 
@@ -40,14 +34,14 @@ function llenarTablaPosiciones(nombredom,torneoid) {
 
 
                         //Recorro players y aplico a resultado los offpower y defpower
-                for (let index = 0; index < playersPorTorneo.playerstats.length; index++) {
+                for (let index = 0; index < jugadorstats.length; index++) {
                     //OFF Y DEF POWER
-                    if (playersPorTorneo.playerstats[index].asistenciaAlltime < 0.4) {
-                          playersPorTorneo.playerstats[index].offpower = -1
-                          playersPorTorneo.playerstats[index].defpower = -1
+                    if (jugadorstats.asistenciaAlltime < 0.4) {
+                          jugadorstats.offpower = -1
+                          jugadorstats.defpower = -1
                     } else {
-                          playersPorTorneo.playerstats[index].offpower = ((playersPorTorneo.playerstats[index].PA-minPF)/rangePF)*10
-                          playersPorTorneo.playerstats[index].defpower = -((playersPorTorneo.playerstats[index].PAC-maxPC)/rangePC)*10
+                          jugadorstats = ((playersPorTorneo.playerstats[index].PA-minPF)/rangePF)*10
+                          jugadorstats = -((playersPorTorneo.playerstats[index].PAC-maxPC)/rangePC)*10
                     }
 
 
@@ -163,39 +157,6 @@ function cargarJugadoresDeck() {
         })
     });
   
-}
-
-function cargarawards() {
-    //AWARDS
-
-    $.getJSON(servidor + "/awardsporanio?anio="+ 2019, //HARDCODEADO!!!
-    function(award) {
-      console.log(award)
-        var arrayofawards = award.awards;
-
-            var htmltotal = ''
-            /*
-            <div id="palermoawardscontainerindex">
-                <div class="awarditemindex"><h3>Mayor Progresión 2019</h3>
-                    <img src="img/iconos/index/awards/captain.png" alt="">
-                    <h4>Emiliano Giusto</h4>
-                </div>
-
-            </div>
-            */
-            for (let index = 0; index < arrayofawards.length; index++) {
-                const award = arrayofawards[index];
-
-                var awardhtml = '<div class="awarditemindex"><h3>' + award.nombre + " " + award.año + '</h3>'
-                              + '<img src="'+ award.symbol + '" alt="">'
-                              + '<h4>' + award.playernombre + " " + award.playerapellido + '</h4></div></div>'
-                
-                htmltotal = htmltotal + awardhtml;
-            }
-
-            $('#palermoawardscontainerindex').html(htmltotal);
-
-    })
 }
 //------------------------------------------------------------//
 function addZeroes( value ) {

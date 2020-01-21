@@ -40,15 +40,14 @@ function llenarTablaPosiciones(nombredom,torneoid) {
                           jugadorstats.offpower = -1
                           jugadorstats.defpower = -1
                     } else {
-                          jugadorstats = ((playersPorTorneo.playerstats[index].PA-minPF)/rangePF)*10
-                          jugadorstats = -((playersPorTorneo.playerstats[index].PAC-maxPC)/rangePC)*10
+                        jugadorstats[index].offpower = ((jugadorstats[index].PA-minPF)/rangePF)*10
+                        jugadorstats[index].defpower = -((jugadorstats[index].PAC-maxPC)/rangePC)*10
                     }
+                }
+            console.log(jugadorstats)
+            //var playersarray=[]
 
-
-                } 
-                var playersarray=[]
-
-          for (let index = 0; index < playersPorTorneo.playerstats.length; index++) {
+          /*for (let index = 0; index < playersPorTorneo.playerstats.length; index++) {
 
                 playersarray.push({
                                       jugadorId: playersPorTorneo.playerstats[index].jugadorId, 
@@ -69,33 +68,55 @@ function llenarTablaPosiciones(nombredom,torneoid) {
                                       momentum: playersPorTorneo.playerstats[index].momentum,
                                       totalpartidosmomentum: playersPorTorneo.playerstats[index].totalpartidosmomentum
                                   })                      
-          }
+          }*/
 
           var contenidoTabla = "";
-          for (let index = 0; index < playersarray.length; index++) {
+          for (let index = 0; index < jugadorstats.length; index++) {
             
-                var element = playersarray[index]
+                var element = jugadorstats[index]
                 
                 if (typeof element.offpower !== 'number')
                     {var offpowerCorr = -1} else { var offpowerCorr = Math.round(element.offpower* 10) / 10;}; 
                 if (typeof element.defpower !== 'number')
                     {var defpowerCorr = -1} else { var defpowerCorr = Math.round(element.defpower* 10) / 10;}; 
-                if (element.momentum == null || element.totalpartidosmomentum <4){
-                  element.momentum = "-"
-                }
                     
             var lineaTabla = 
-              '<tr><td scope="row"><a href="jugador.html?id=' + element.jugadorId +'">' + element.nombre + " " +element.apellido + '</a></th><td>'+ element.ganados +'</td><td>'
-              + element.perdidos +'</td><td>'+ element.empatados +'</td><td>' + element.partidosTotales + '</td><td>' + addZeroes(Math.round(element.eficiencia*100 * 10) / 10) + '%</td><td>' 
-              + addZeroes(offpowerCorr) + '</td><td>' + addZeroes(defpowerCorr) + '</td><td>' + element.momentum + '</td><td>' + addZeroes(Math.round(element.asistencia*100 * 10) / 10) + '%</td></tr>'
+              '<tr><td scope="row"><a href="jugador.html?id=' + element.jugadorId +'">' + element.nombre + " " +element.apellido 
+              + '</a></th><td>'+ element.ganados +'</td><td>'
+              + element.perdidos +'</td><td>'
+              + element.empatados +'</td><td>' 
+              + element.totales + '</td><td>' 
+              + element.puntos + '</td><td>' 
+              + element.puntosporpartido + '</td><td>'
+              + element.golesjugadortorneo + '</td><td>'
+              + addZeroes(Math.round(element.eficienciaganados*100 * 10) / 10) + '%</td><td>'
+              + addZeroes(offpowerCorr) + '</td><td>' 
+              + addZeroes(defpowerCorr) + '</td><td>' 
+              + element.momentum + '</td><td>' 
+              + addZeroes(Math.round(element.asistenciatorneo*100 * 10) / 10) + '%</td></tr>'
               
               contenidoTabla = contenidoTabla + lineaTabla
           }
+
+          $(nombredom).html(contenidoTabla)
+          /*
+             <th>Nombre</th>
+            <th data-toggle="tooltip" title="Partidos Ganados" class="sorttable_numeric">PG</th>
+            <th data-toggle="tooltip" title="Partidos Perdidos" class="sorttable_numeric">PP</th>
+            <th data-toggle="tooltip" title="Partidos Empatados" class="sorttable_numeric">PE</th>
+            <th data-toggle="tooltip" title="Partidos Jugados" class="sorttable_numeric">PJ</th>
+            <th data-toggle="tooltip" title="Puntos" class="sorttable_numeric">Ptos</th>
+            <th data-toggle="tooltip" title="Puntos por partido promedio" class="sorttable_numeric">PtosPP</th>
+            <th data-toggle="tooltip" title="Goles totales Individuales" class="sorttable_numeric">GI</th>
+            <th data-toggle="tooltip" title="Efectividad de victorias de esta temporada" class="sorttable_numeric">Efect. Season</th>
+            <th data-toggle="tooltip" title="Offensive Power: es un indicador de los puntos que anotaron los equipos en donde participaste all-time. El maximo es 10 y el minimo es 0. El valor -1 indica que no se encuentra contabilizado porque el jugador posee menos de 40% asistencia All-time" class="sorttable_numeric">Off. Power</th>
+            <th data-toggle="tooltip" title="Defensive Power: es un indicador de los puntos que recibieron los equipos en donde participaste all-time. El maximo es 10 y el minimo es 0. El valor -1 indica que no se encuentra contabilizado porque el jugador posee menos de 40% asistencia All-time"class="sorttable_numeric">Def. Power</th>  
+            <th data-toggle="tooltip" title="Asistencia de esta temporada">Asist. Season</th> */
+           
           
-           $(nombredom).html(contenidoTabla)
-              var myTH = document.getElementsByTagName("th")[4];
+            /*var myTH = document.getElementsByTagName("th")[4];
               sorttable.innerSortFunction.apply(myTH, []);
-              sorttable.innerSortFunction.apply(myTH, []);
+              sorttable.innerSortFunction.apply(myTH, []);*/
       })
 }
 

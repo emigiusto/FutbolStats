@@ -3,13 +3,13 @@
 $(document).ready(function() {
     //se hace el pedido al backend de todos los jugadores
     $.getJSON(servidor + "/players",
-        function(data) {
+        function(jugadores) {
             //Borro los contenedores de opciones
             $(".custom-select").html('');
 
             var contentSelection = '<option selected>Choose...</option>'
-            for (i = 0; i < data.player.length; i++) {
-                contentSelection = contentSelection + '<option value="'+ data.player[i].id  +'">' + data.player[i].nombre + ' ' +data.player[i].apellido + '</option>'
+            for (i = 0; i < jugadores.length; i++) {
+                contentSelection = contentSelection + '<option value="'+ jugadores[i].jugador_id  +'">' + jugadores[i].nombre + ' ' +jugadores[i].apellido + '</option>'
                 $(".custom-select").html(contentSelection)
             }
         });
@@ -25,20 +25,20 @@ function calcularMatchup() {
 
     $.getJSON(servidor + "/matchup?p1=" + player1id + "&p2=" + player2id,
         function(data) {
-
+            console.log(data)
             //Si nunca jugaron el mismo partido
             if (data.matchup.length== 0) {
                     $.getJSON(servidor + "/players",
-                        function(dataplayer) {
-                            for (let index = 0; index < dataplayer.player.length; index++) {
-                                var idPlayer = dataplayer.player[index].id;
+                        function(jugadores) {
+                            for (let index = 0; index < jugadores.length; index++) {
+                                var idPlayer = jugadores[index].id;
                                     if (idPlayer == player1id) {
-                                        $('#p1name').html(dataplayer.player[index].nombre + " " + dataplayer.player[index].apellido);
-                                        $('#player1 >img').attr("src",dataplayer.player[index].foto);
+                                        $('#p1name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
+                                        $('#player1 >img').attr("src",jugadores[index].foto);
                                     }
                                     if (idPlayer == player2id) {
-                                        $('#p2name').html(dataplayer.player[index].nombre + " " + dataplayer.player[index].apellido);
-                                        $('#player2 > img').attr("src",dataplayer.player[index].foto);
+                                        $('#p2name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
+                                        $('#player2 > img').attr("src",jugadores[index].foto);
                                     }
                             }
                         })
@@ -76,10 +76,10 @@ function calcularMatchup() {
                 if (resultA !== resultB) {
                     if (resultA == 1) {
                         p1Counter++;
-                        matchupsParaAnotar.push({nombre: data.matchup[i].nombre, apellido: data.matchup[i].apellido, fecha:data.matchup[i].fecha, puntosganador: data.matchup[i].puntosganador, puntosperdedor: data.matchup[i].puntosperdedor})
+                        matchupsParaAnotar.push({nombre: data.matchup[i].nombre, apellido: data.matchup[i].apellido, fecha:data.matchup[i].fecha, puntosganador: data.matchup[i].golesganador, puntosperdedor: data.matchup[i].golesperdedor})
                     }
                     if (resultB == 1) {
-                        matchupsParaAnotar.push({nombre: data.matchup[i+1].nombre, apellido: data.matchup[i+1].apellido, fecha:data.matchup[i+1].fecha, puntosganador: data.matchup[i+1].puntosganador, puntosperdedor: data.matchup[i+1].puntosperdedor})
+                        matchupsParaAnotar.push({nombre: data.matchup[i+1].nombre, apellido: data.matchup[i+1].apellido, fecha:data.matchup[i+1].fecha, puntosganador: data.matchup[i+1].golesganador, puntosperdedor: data.matchup[i+1].golesperdedor})
                         p2Counter++
                     }
                 }

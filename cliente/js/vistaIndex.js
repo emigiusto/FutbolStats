@@ -44,31 +44,7 @@ function llenarTablaPosiciones(nombredom,torneoid) {
                         jugadorstats[index].defpower = -((jugadorstats[index].PAC-maxPC)/rangePC)*10
                     }
                 }
-            
-            //var playersarray=[]
-
-          /*for (let index = 0; index < playersPorTorneo.playerstats.length; index++) {
-
-                playersarray.push({
-                                      jugadorId: playersPorTorneo.playerstats[index].jugadorId, 
-                                      nombre: playersPorTorneo.playerstats[index].nombre,
-                                      apellido: playersPorTorneo.playerstats[index].apellido,
-                                      foto: playersPorTorneo.playerstats[index].foto,
-                                      bestmove: playersPorTorneo.playerstats[index].bestmove,
-                                      ganados: playersPorTorneo.playerstats[index].ganados,
-                                      perdidos: playersPorTorneo.playerstats[index].perdidos,
-                                      empatados: playersPorTorneo.playerstats[index].empatados,
-                                      partidosTotales: playersPorTorneo.playerstats[index].partidosTotales,
-                                      eficiencia: playersPorTorneo.playerstats[index].eficiencia,
-                                      asistencia: playersPorTorneo.playerstats[index].asistencia,
-                                      eficienciaAlltime: playersPorTorneo.playerstats[index].eficienciaAlltime,
-                                      asistenciaAlltime: playersPorTorneo.playerstats[index].asistenciaAlltime,
-                                      offpower: playersPorTorneo.playerstats[index].offpower,
-                                      defpower: playersPorTorneo.playerstats[index].defpower,
-                                      momentum: playersPorTorneo.playerstats[index].momentum,
-                                      totalpartidosmomentum: playersPorTorneo.playerstats[index].totalpartidosmomentum
-                                  })                      
-          }*/
+          
 
           var contenidoTabla = "";
           for (let index = 0; index < jugadorstats.length; index++) {
@@ -90,6 +66,7 @@ function llenarTablaPosiciones(nombredom,torneoid) {
                   + element.puntos + '</td><td>' 
                   + Math.round(element.puntosporpartido* 10) / 10 + '</td><td>'
                   + element.golesjugadortorneo + '</td><td>'
+                  + Math.round(element.golesjugadorporpartido* 10) / 10 + '</td><td>'
                   + addZeroes(Math.round(element.eficienciaganados*100 * 10) / 10) + '%</td><td>'
                   + addZeroes(offpowerCorr) + '</td><td>' 
                   + addZeroes(defpowerCorr) + '</td><td>' 
@@ -99,24 +76,6 @@ function llenarTablaPosiciones(nombredom,torneoid) {
           }
 
           $(nombredom).html(contenidoTabla)
-          /*
-             <th>Nombre</th>
-            <th data-toggle="tooltip" title="Partidos Ganados" class="sorttable_numeric">PG</th>
-            <th data-toggle="tooltip" title="Partidos Perdidos" class="sorttable_numeric">PP</th>
-            <th data-toggle="tooltip" title="Partidos Empatados" class="sorttable_numeric">PE</th>
-            <th data-toggle="tooltip" title="Partidos Jugados" class="sorttable_numeric">PJ</th>
-            <th data-toggle="tooltip" title="Puntos" class="sorttable_numeric">Ptos</th>
-            <th data-toggle="tooltip" title="Puntos por partido promedio" class="sorttable_numeric">PtosPP</th>
-            <th data-toggle="tooltip" title="Goles totales Individuales" class="sorttable_numeric">GI</th>
-            <th data-toggle="tooltip" title="Efectividad de victorias de esta temporada" class="sorttable_numeric">Efect. Season</th>
-            <th data-toggle="tooltip" title="Offensive Power: es un indicador de los puntos que anotaron los equipos en donde participaste all-time. El maximo es 10 y el minimo es 0. El valor -1 indica que no se encuentra contabilizado porque el jugador posee menos de 40% asistencia All-time" class="sorttable_numeric">Off. Power</th>
-            <th data-toggle="tooltip" title="Defensive Power: es un indicador de los puntos que recibieron los equipos en donde participaste all-time. El maximo es 10 y el minimo es 0. El valor -1 indica que no se encuentra contabilizado porque el jugador posee menos de 40% asistencia All-time"class="sorttable_numeric">Def. Power</th>  
-            <th data-toggle="tooltip" title="Asistencia de esta temporada">Asist. Season</th> */
-           
-          
-            /*var myTH = document.getElementsByTagName("th")[4];
-              sorttable.innerSortFunction.apply(myTH, []);
-              sorttable.innerSortFunction.apply(myTH, []);*/
       })
 }
 

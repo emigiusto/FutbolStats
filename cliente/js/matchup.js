@@ -122,7 +122,7 @@ function armarCuadroMatchup(matchupData) {
     for (let index = 0; index < matchupData.length; index++) {
 
         var d = new Date(matchupData[index].fecha);
-        let formatted_date = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
+        let formatted_date = d.getDate()+1 + "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
         var lineaTabla = 
         '<tr><th scope="row">' + formatted_date + '</th><td>' + matchupData[index].nombre + ' ' + matchupData[index].apellido 
         + '</td><td>' + matchupData[index].puntosganador + '</td><td>' + matchupData[index].puntosperdedor + '</td></tr>';

@@ -25,27 +25,26 @@ function calcularMatchup() {
 
     $.getJSON(servidor + "/matchup?p1=" + player1id + "&p2=" + player2id,
         function(data) {
-            console.log(data)
-            //Si nunca jugaron el mismo partido
-            if (data.matchup.length== 0) {
-                    $.getJSON(servidor + "/players",
-                        function(jugadores) {
-                            for (let index = 0; index < jugadores.length; index++) {
-                                var idPlayer = jugadores[index].id;
-                                    if (idPlayer == player1id) {
-                                        $('#p1name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
-                                        $('#player1 >img').attr("src",jugadores[index].foto);
-                                    }
-                                    if (idPlayer == player2id) {
-                                        $('#p2name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
-                                        $('#player2 > img').attr("src",jugadores[index].foto);
-                                    }
-                            }
-                        })
-                $('#p1result').html("0");
-                $('#p2result').html("0");
-                return false;
-            }
+                //Si nunca jugaron el mismo partido
+                if (data.matchup.length== 0) {
+                        $.getJSON(servidor + "/players",
+                            function(jugadores) {
+                                for (let index = 0; index < jugadores.length; index++) {
+                                    var idPlayer = jugadores[index].id;
+                                        if (idPlayer == player1id) {
+                                            $('#p1name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
+                                            $('#player1 >img').attr("src",jugadores[index].foto);
+                                        }
+                                        if (idPlayer == player2id) {
+                                            $('#p2name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
+                                            $('#player2 > img').attr("src",jugadores[index].foto);
+                                        }
+                                }
+                            })
+                    $('#p1result').html("0");
+                    $('#p2result').html("0");
+                    return false;
+                }
 
             var p1Counter = 0
             var p2Counter = 0
@@ -72,17 +71,22 @@ function calcularMatchup() {
             for (i = 0; i < data.matchup.length; i++) {
                 resultA = data.matchup[i].resultado
                 resultB = data.matchup[i+1].resultado
-
+                //Si tuvieron distinto resultado
                 if (resultA !== resultB) {
                     if (resultA == 1) {
                         p1Counter++;
                         matchupsParaAnotar.push({nombre: data.matchup[i].nombre, apellido: data.matchup[i].apellido, fecha:data.matchup[i].fecha, puntosganador: data.matchup[i].golesganador, puntosperdedor: data.matchup[i].golesperdedor})
                     }
                     if (resultB == 1) {
-                        matchupsParaAnotar.push({nombre: data.matchup[i+1].nombre, apellido: data.matchup[i+1].apellido, fecha:data.matchup[i+1].fecha, puntosganador: data.matchup[i+1].golesganador, puntosperdedor: data.matchup[i+1].golesperdedor})
                         p2Counter++
+                        matchupsParaAnotar.push({nombre: data.matchup[i+1].nombre, apellido: data.matchup[i+1].apellido, fecha:data.matchup[i+1].fecha, puntosganador: data.matchup[i+1].golesganador, puntosperdedor: data.matchup[i+1].golesperdedor})
                     }
                 }
+                //Si hay empate
+                if ((resultA !== resultB)&&(resultA==2)) {
+                    matchupsParaAnotar.push({nombre: "Empate", fecha:data.matchup[i].fecha, puntosganador: data.matchup[i].golesganador, puntosperdedor: data.matchup[i].golesperdedor})
+                }
+
                 i++
             }
 
@@ -101,7 +105,6 @@ function calcularMatchup() {
                 $('#player1 >img').attr("src",player2Foto);
                 $('#player2 > img').attr("src",player1Foto);
             }
-            console.log(matchupsParaAnotar)
             armarCuadroMatchup(matchupsParaAnotar);
         });
 }

@@ -27,11 +27,14 @@ function calcularMatchup() {
         function(data) {
             console.log(data)
                 //Si nunca jugaron el mismo partido
+                console.log("Esta vacio el matchup?")
+                console.log(data.matchup.length== 0)
                 if (data.matchup.length== 0) {
                         $.getJSON(servidor + "/players",
                             function(jugadores) {
+                                console.log(jugadores)
                                 for (let index = 0; index < jugadores.length; index++) {
-                                    var idPlayer = jugadores[index].id;
+                                    var idPlayer = jugadores[index].jugador_id;
                                     console.log(idPlayer)
                                         if (idPlayer == player1id) {
                                             $('#p1name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
@@ -84,14 +87,8 @@ function calcularMatchup() {
                         matchupsParaAnotar.push({nombre: data.matchup[i+1].nombre, apellido: data.matchup[i+1].apellido, fecha:data.matchup[i+1].fecha, puntosganador: data.matchup[i+1].golesganador, puntosperdedor: data.matchup[i+1].golesperdedor})
                     }
                 }
-                //Si hay empate
-                if ((resultA == resultB)&&(resultA==2)) {
-                    matchupsParaAnotar.push({nombre: "Empate", apellido: "", fecha:data.matchup[i].fecha, puntosganador: data.matchup[i].golesganador, puntosperdedor: data.matchup[i].golesperdedor})
-                }
-
                 i++
             }
-
 
             if (orden) {
                 $('#p1result').html(p1Counter);
@@ -108,7 +105,32 @@ function calcularMatchup() {
                 $('#player1 >img').attr("src",player2Foto);
                 $('#player2 > img').attr("src",player1Foto);
             }
-            armarCuadroMatchup(matchupsParaAnotar);
+            console.log("Esta vacio el matchupsparaanotar?")
+            console.log(matchupsParaAnotar.length== 0)
+                    if (matchupsParaAnotar.length== 0) {
+                        $.getJSON(servidor + "/players",
+                        
+                            function(players) {
+                                console.log(players)
+                                for (let index = 0; index < players.length; index++) {
+                                    var idPlayer = players[index].jugador_id;
+                                    console.log(idPlayer)
+                                        if (idPlayer == player1id) {
+                                            $('#p1name').html(players[index].nombre + " " + players[index].apellido);
+                                            $('#player1 >img').attr("src",players[index].foto);
+                                        }
+                                        if (idPlayer == player2id) {
+                                            $('#p2name').html(players[index].nombre + " " + players[index].apellido);
+                                            $('#player2 > img').attr("src",players[index].foto);
+                                        }
+                                }
+                            })
+                        $('#p1result').html("0");
+                        $('#p2result').html("0");
+                    return false;
+                } else{
+                    armarCuadroMatchup(matchupsParaAnotar);
+                }
         });
 }
 

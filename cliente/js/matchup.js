@@ -25,12 +25,14 @@ function calcularMatchup() {
 
     $.getJSON(servidor + "/matchup?p1=" + player1id + "&p2=" + player2id,
         function(data) {
+            console.log(data)
                 //Si nunca jugaron el mismo partido
                 if (data.matchup.length== 0) {
                         $.getJSON(servidor + "/players",
                             function(jugadores) {
                                 for (let index = 0; index < jugadores.length; index++) {
                                     var idPlayer = jugadores[index].id;
+                                    console.log(idPlayer)
                                         if (idPlayer == player1id) {
                                             $('#p1name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
                                             $('#player1 >img').attr("src",jugadores[index].foto);
@@ -41,8 +43,8 @@ function calcularMatchup() {
                                         }
                                 }
                             })
-                    $('#p1result').html("0");
-                    $('#p2result').html("0");
+                        $('#p1result').html("0");
+                        $('#p2result').html("0");
                     return false;
                 }
 
@@ -83,12 +85,13 @@ function calcularMatchup() {
                     }
                 }
                 //Si hay empate
-                if ((resultA !== resultB)&&(resultA==2)) {
-                    matchupsParaAnotar.push({nombre: "Empate", fecha:data.matchup[i].fecha, puntosganador: data.matchup[i].golesganador, puntosperdedor: data.matchup[i].golesperdedor})
+                if ((resultA == resultB)&&(resultA==2)) {
+                    matchupsParaAnotar.push({nombre: "Empate", apellido: "", fecha:data.matchup[i].fecha, puntosganador: data.matchup[i].golesganador, puntosperdedor: data.matchup[i].golesperdedor})
                 }
 
                 i++
             }
+
 
             if (orden) {
                 $('#p1result').html(p1Counter);

@@ -37,10 +37,12 @@
                         <table id="alltime" class="table table-striped table-hover sortable alltime">
                             <thead>
                             <tr>
-                                <th >Nombre</th>
-                                <th class="sorttable_numeric">PG</th>
-                                <th class="sorttable_numeric">PP</th>
-                                <th class="sorttable_numeric">PJ</th>
+                                <th>Nombre</th>
+                                <th data-toggle="tooltip" title="Partidos Ganados" class="sorttable_numeric">PG</th>
+                                <th data-toggle="tooltip" title="Partidos Perdidos" class="sorttable_numeric">PP</th>
+                                <th data-toggle="tooltip" title="Partidos Empatados" class="sorttable_numeric">PE</th>
+                                <th data-toggle="tooltip" title="Partidos Jugados" class="sorttable_numeric">PJ</th>
+                                <th data-toggle="tooltip" title="Puntos por partido promedio" class="sorttable_numeric">PPP</th>
                                 <th class="sorttable_numeric">Efectividad</th>
                                 <th class="sorttable_numeric">Asistencia</th>
                             </tr>
@@ -60,19 +62,12 @@
                 </div>
             </div>
         </div>
-        <script src="js/servidorInfo.js"></script>
-        <script src="js/jquery.js"></script>
-        <script src="js/matchup.js"></script>
+        <script src="../js/servidorInfo.js"></script>
+        <script src="../js/lib/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="js/jugador.js"></script>
-        <script src="js/torneo.js"></script>
-        <script src="js/partido.js"></script>
-        
-        <script src="js/listadoJugadores.js"></script>
-        <script src="js/listaTorneos.js"></script>
-        <script src="js/vistaRecords.js"></script>
-        <script src="js/sorttable.js"></script>
+        <script src="../js/vistaRecords.js"></script>
+        <script src="../js/lib/sorttable.js"></script>
     </body>
     
 

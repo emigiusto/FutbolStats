@@ -80,15 +80,26 @@ function llenarTablaPosiciones(nombredom,torneoid) {
 }
 
 function cargarJugadoresDeck() {
-      /*<div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
+  /*<div class="card">
+        <img src="img/profiles/Emi.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <div class="col-izq-card">
+                <h5 class="card-title">Valen Mantovani</h5>
+                <p class="card-text-puesto"><small class="text-muted">Base</small></p>
+                <div class="perfil"><p>perfil</p><img src="img/iconos/index/playercard/user.png" alt=""></div>
+            </div>
+            <div class="col-der-card">
+                <div class="fila1card">
+                    <p>Racha</p>
+                </div>
+                <div class="fila2card">
+                    <p>+2</p>
+                    <img src="img/iconos/index/racha/fire.png" alt="">
+                </div>
+            </div>
+        </div>
     </div>*/
-  $.getJSON(servidor + "/players",
+    $.getJSON(servidor + "/players",
     function(data) {
       //Borro los contenedores de opciones
       $("#jugadoresDeck").html('');
@@ -97,17 +108,33 @@ function cargarJugadoresDeck() {
 
         for (i = 0; i < data.player.length; i++) {
           
-          newline = '<div class="card" idplayer="'+  data.player[i].id +'">'
-                    + '<img src="'+ data.player[i].foto +'" class="card-img-top" alt="..."><div class="card-body">'
-                    + '<div class="tituloyracha"><h5 class="card-title">'+ data.player[i].nombre + ' ' +data.player[i].apellido + '</h5>'
-                    + '<h4></h4></div>'
-          + '<p class="card-text">'+ data.player[i].posicion +'</p>'
-          + '<p class="card-text"><small class="text-muted">Last updated 1 mins ago</small></p></div></div>'
+          newline = '<div class="card" idplayer="'+  data.player[i].jugador_id +'">'
+                  + '<img src="'+ data.player[i].foto +'" class="card-img-top" alt="...">'
+                  + '<div class="card-body">'
+                  + '<div class="col-izq-card">'
+                  + '<h5 class="card-title">'+ data.player[i].nombre + ' ' +data.player[i].apellido + '</h5>'
+                  + '<p class="card-text-puesto"><small class="text-muted">'+ data.player[i].posicion +'</small></p>'
+                  + '<div class="perfil"><p>perfil</p><img src="img/iconos/index/playercard/user.png" alt=""></div>'
+                  + '</div>'
+                  + '<div class="col-der-card">'
+                  + '<div class="fila1card">'
+                  + '<p>Racha</p>'
+                  + '</div>'
+                  + '<div class="fila2card">'
+                  + '<p></p>'
+                  + '<img src="img/iconos/index/racha/fire.png" alt="">'
+                  + '</div></div></div>'
+                  + '<div class="overlay">'
+                  + '<img class="userCard" src="img/iconos/index/playercard/user.png" alt="">'
+                  + '<div class="text-player">'+ data.player[i].nombre + ' ' +data.player[i].apellido +'</div>'
+                  + '<div class="verperfilCard">Ver Perfil</div>'
+                  + '</div>'
+                  + '</div>'
 
           contentSelection = contentSelection + newline;
 
             //ACTUALIZO LAS RACHAS
-                $.getJSON(servidor + "/rachaPlayer?jugadorId=" + data.player[i].id,
+                $.getJSON(servidor + "/rachaPlayer?jugadorId=" + data.player[i].jugador_id,
                 function(players) {
                     var racha = players.racha
                             if (racha>0 && racha<4) {
@@ -124,9 +151,9 @@ function cargarJugadoresDeck() {
                             else if (racha <= -3){
                               img = '<img class="rachaicon" src="img/iconos/index/racha/down-arrow.png" alt="">'
                             }
-                    $("[idplayer="+ players.jugadorId +"] h4").html(racha + img )
-                })
 
+                    $("[idplayer="+ players.jugadorId +"] .fila2card").html("<p>" + racha + "</p>" + img)
+                })
         }
 
         $("#jugadoresDeck").html(contentSelection);
@@ -135,9 +162,9 @@ function cargarJugadoresDeck() {
           var idPlayer = (this).getAttribute("idplayer")
           window.location.replace("jugador.html?id=" + idPlayer);
         })
-    });
-  
+      });
 }
+
 //------------------------------------------------------------//
 function addZeroes( value ) {
   //set everything to at least two decimals; removs 3+ zero decimasl, keep non-zero decimals

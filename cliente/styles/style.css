@@ -658,7 +658,7 @@ body{
                         }
                 .card-deck .card p{
                     font-size: 0.9rem;
-                    margin-top:0.5rem
+                    margin-top: 0.2rem;
                 }
 
 
@@ -847,7 +847,7 @@ body{
             width: 65%;
             padding-top: 0.4rem;
             padding-bottom: 0.6rem;
-            height: 5.8rem;
+            height: 6.8rem;
             padding-right: 0.2rem;
         }
         .col-der-card{

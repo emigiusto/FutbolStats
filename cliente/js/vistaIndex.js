@@ -114,7 +114,7 @@ function cargarJugadoresDeck() {
                   + '<div class="card-body">'
                   + '<div class="col-izq-card">'
                   + '<h5 class="card-title">'+ jugador[i].nombre + ' ' +jugador[i].apellido + '</h5>'
-                  + '<p class="card-text-puesto"><small class="text-muted">'+ jugador[i].posicion +'</small></p>'
+                  + '<p class="card-text-puesto"><small class="text-muted">'/*+ jugador[i].posicion*/ +'</small></p>'
                   + '<div class="perfil"><p>perfil</p><img src="../img/iconos/index/playercard/user.png" alt=""></div>'
                   + '</div>'
                   + '<div class="col-der-card">'

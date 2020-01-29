@@ -25,17 +25,12 @@ function calcularMatchup() {
 
     $.getJSON(servidor + "/matchup?p1=" + player1id + "&p2=" + player2id,
         function(data) {
-            console.log(data)
                 //Si nunca jugaron el mismo partido
-                console.log("Esta vacio el matchup?")
-                console.log(data.matchup.length== 0)
                 if (data.matchup.length== 0) {
                         $.getJSON(servidor + "/players",
                             function(jugadores) {
-                                console.log(jugadores)
                                 for (let index = 0; index < jugadores.length; index++) {
                                     var idPlayer = jugadores[index].jugador_id;
-                                    console.log(idPlayer)
                                         if (idPlayer == player1id) {
                                             $('#p1name').html(jugadores[index].nombre + " " + jugadores[index].apellido);
                                             $('#player1 >img').attr("src",jugadores[index].foto);
@@ -105,16 +100,11 @@ function calcularMatchup() {
                 $('#player1 >img').attr("src",player2Foto);
                 $('#player2 > img').attr("src",player1Foto);
             }
-            console.log("Esta vacio el matchupsparaanotar?")
-            console.log(matchupsParaAnotar.length== 0)
                     if (matchupsParaAnotar.length== 0) {
                         $.getJSON(servidor + "/players",
-                        
                             function(players) {
-                                console.log(players)
                                 for (let index = 0; index < players.length; index++) {
                                     var idPlayer = players[index].jugador_id;
-                                    console.log(idPlayer)
                                         if (idPlayer == player1id) {
                                             $('#p1name').html(players[index].nombre + " " + players[index].apellido);
                                             $('#player1 >img').attr("src",players[index].foto);

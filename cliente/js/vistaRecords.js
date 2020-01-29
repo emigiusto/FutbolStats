@@ -33,6 +33,8 @@ function llenarTablaAllTime() {
                         + "<td>"+ jugador.empatados + "</td>"
                         + "<td>"+ jugador.totales + "</td>"
                         + "<td>"+ addZeroes(Math.round(jugador.puntosporpartido * 100) / 100) + "</td>"
+                        + "<td>"+ jugador.golesjugador + "</td>"
+                        + "<td>"+ addZeroes(Math.round(jugador.golesjugadorporpartido * 100) / 100) + "</td>"
                         + "<td>"+ addZeroes(Math.round(jugador.eficienciaalltime*100 * 10) / 10) + "%</td>"
                         + "<td>"+ addZeroes(Math.round(jugador.asistenciaalltime*100 * 10) / 10) + "%</td>"
                         + "</tr>";

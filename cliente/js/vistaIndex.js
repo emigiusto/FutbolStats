@@ -3,7 +3,7 @@ $(document).ready(iniciarIndex());
 function iniciarIndex() {
     $('[data-toggle="tooltip"]').tooltip();
     llenarTablaPosiciones("#tablePosicionesGeoFutbol > tbody",3);
-    //cargarJugadoresDeck();
+    cargarJugadoresDeck();
 }
 
 
@@ -100,21 +100,22 @@ function cargarJugadoresDeck() {
         </div>
     </div>*/
     $.getJSON(servidor + "/players",
-    function(data) {
+    function(jugador) {
       //Borro los contenedores de opciones
       $("#jugadoresDeck").html('');
       var contentSelection = "";
       var newline = ""
+      
 
-        for (i = 0; i < data.player.length; i++) {
+        for (i = 0; i < jugador.length; i++) {
           
-          newline = '<div class="card" idplayer="'+  data.player[i].jugador_id +'">'
-                  + '<img src="'+ data.player[i].foto +'" class="card-img-top" alt="...">'
+          newline = '<div class="card" idplayer="'+  jugador[i].jugador_id +'">'
+                  + '<img src="'+ jugador[i].foto +'" class="card-img-top" alt="...">'
                   + '<div class="card-body">'
                   + '<div class="col-izq-card">'
-                  + '<h5 class="card-title">'+ data.player[i].nombre + ' ' +data.player[i].apellido + '</h5>'
-                  + '<p class="card-text-puesto"><small class="text-muted">'+ data.player[i].posicion +'</small></p>'
-                  + '<div class="perfil"><p>perfil</p><img src="img/iconos/index/playercard/user.png" alt=""></div>'
+                  + '<h5 class="card-title">'+ jugador[i].nombre + ' ' +jugador[i].apellido + '</h5>'
+                  + '<p class="card-text-puesto"><small class="text-muted">'+ jugador[i].posicion +'</small></p>'
+                  + '<div class="perfil"><p>perfil</p><img src="../img/iconos/index/playercard/user.png" alt=""></div>'
                   + '</div>'
                   + '<div class="col-der-card">'
                   + '<div class="fila1card">'
@@ -122,19 +123,19 @@ function cargarJugadoresDeck() {
                   + '</div>'
                   + '<div class="fila2card">'
                   + '<p></p>'
-                  + '<img src="img/iconos/index/racha/fire.png" alt="">'
+                  + '<img src="../img/iconos/index/racha/fire.png" alt="">'
                   + '</div></div></div>'
                   + '<div class="overlay">'
-                  + '<img class="userCard" src="img/iconos/index/playercard/user.png" alt="">'
-                  + '<div class="text-player">'+ data.player[i].nombre + ' ' +data.player[i].apellido +'</div>'
+                  + '<img class="userCard" src="../img/iconos/index/playercard/user.png" alt="">'
+                  + '<div class="text-player">'+ jugador[i].nombre + ' ' +jugador[i].apellido +'</div>'
                   + '<div class="verperfilCard">Ver Perfil</div>'
                   + '</div>'
                   + '</div>'
 
           contentSelection = contentSelection + newline;
 
-            //ACTUALIZO LAS RACHAS
-                $.getJSON(servidor + "/rachaPlayer?jugadorId=" + data.player[i].jugador_id,
+            /*//ACTUALIZO LAS RACHAS
+                $.getJSON(servidor + "/rachaPlayer?jugadorId=" + jugador[i].jugador_id,
                 function(players) {
                     var racha = players.racha
                             if (racha>0 && racha<4) {
@@ -153,9 +154,9 @@ function cargarJugadoresDeck() {
                             }
 
                     $("[idplayer="+ players.jugadorId +"] .fila2card").html("<p>" + racha + "</p>" + img)
-                })
+                })*/
         }
-
+        
         $("#jugadoresDeck").html(contentSelection);
 
         $("div.card").click(function(e) {

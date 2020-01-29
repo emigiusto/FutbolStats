@@ -816,6 +816,172 @@ body{
             margin-top:0.8rem;
             margin-bottom: 0.8rem;
           }
+
+
+    /* PLAYERS SECTION */
+
+    #playersSection{
+        width: 80%;
+        margin: auto;
+    }
+    .card-deck {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+    }
+        .card-body {
+            padding: 0.85rem;
+            padding-right: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+        }
+        .card-deck .card {
+            width:17%;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        .col-izq-card{
+            width: 65%;
+            padding-top: 0.4rem;
+            padding-bottom: 0.6rem;
+            height: 5.8rem;
+            padding-right: 0.2rem;
+        }
+        .col-der-card{
+            width: 35%;
+        }
+            .card-text-puesto{
+                font-size: 0.8rem;
+            }
+
+
+            .perfil{
+                display: flex;
+                border: 1px solid blue;
+                background-color: blue;
+                color: white;
+                align-items: center;
+                width: 50%;
+                margin-top: 0.8rem;
+                justify-content: center;
+                padding: 0.1rem;
+                border-radius: 3px 3px 3px 3px;
+                -moz-border-radius: 3px 3px 3px 3px;
+                -webkit-border-radius: 3px 3px 3px 3px;
+            }
+                .perfil > img{
+                    width:13%;
+                    height:13%;
+                    margin-left:6%;
+                    margin-right: 3%;
+                }
+                .perfil > p{
+                    font-weight: 600;
+                    padding-bottom:0.2rem;
+                    padding-top:0.2rem;
+                    font-size: 0.7rem
+                }
+                    .card-text-puesto{
+                        margin-top: 0.5rem;
+                        margin-bottom: 0.3rem;
+                        font-size: 0.95rem;
+                    }
+
+            .col-der-card{
+                display: flex;
+                flex-direction: column;
+                border-left: 1px solid rgba(0,0,0,.125);
+            }
+                .fila1card{
+                    height: 2.2rem;
+                    background-color: grey;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                    .fila1card > p{
+                        color: white;
+                        font-weight: 600;
+                        font-size: 1rem;
+                    }
+                
+                .fila2card{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: auto;
+                }
+                        .fila2card > p{
+                            margin-right: 8%;
+                            font-size: 1.3rem;
+                            font-weight: 600;
+                        }
+                        .fila2card > img{
+                            width: 30%;
+                            padding-bottom:0.2rem
+                        }
+
+                .card-deck .card h5{
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    margin-top: 0.2rem;
+                    margin-bottom: 0.2rem;
+                    line-height: 1.2rem;
+                }
+    /* CARDS */
+          .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: rgb(47, 89, 226);
+          }
+    
+        .card:hover .overlay {
+            opacity: 0.95;
+          }
+          .text-player {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+          }
+    
+          .verperfilCard{
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+          }
+    
+          .userCard{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 30%;
+          }
 /* ------------------------------------------------------------------- */
 /* ------------------------------------------------------------------- */
 /* ------------------------------------------------------------------- */

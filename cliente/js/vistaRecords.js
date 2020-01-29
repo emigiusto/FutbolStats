@@ -26,18 +26,22 @@ function llenarTablaAllTime() {
       var contentSelection = "";
       for (let index = 0; index < data.length; index++) {
           var jugador = data[index];
-          var newLine = "<tr>"
-                        + "<td>"+ jugador.nombre + " " + jugador.apellido +"</td>"
-                        + "<td>"+ jugador.ganados + "</td>"
-                        + "<td>"+ jugador.perdidos + "</td>"
-                        + "<td>"+ jugador.empatados + "</td>"
-                        + "<td>"+ jugador.totales + "</td>"
-                        + "<td>"+ addZeroes(Math.round(jugador.puntosporpartido * 100) / 100) + "</td>"
-                        + "<td>"+ jugador.golesjugador + "</td>"
-                        + "<td>"+ addZeroes(Math.round(jugador.golesjugadorporpartido * 100) / 100) + "</td>"
-                        + "<td>"+ addZeroes(Math.round(jugador.eficienciaalltime*100 * 10) / 10) + "%</td>"
-                        + "<td>"+ addZeroes(Math.round(jugador.asistenciaalltime*100 * 10) / 10) + "%</td>"
-                        + "</tr>";
+            if (jugador.asistenciaalltime <= 0.1) {
+              var newLine = "";
+            } else {
+            var newLine = "<tr>"
+                          + "<td>"+ jugador.nombre + " " + jugador.apellido +"</td>"
+                          + "<td>"+ jugador.ganados + "</td>"
+                          + "<td>"+ jugador.perdidos + "</td>"
+                          + "<td>"+ jugador.empatados + "</td>"
+                          + "<td>"+ jugador.totales + "</td>"
+                          + "<td>"+ addZeroes(Math.round(jugador.puntosporpartido * 100) / 100) + "</td>"
+                          + "<td>"+ jugador.golesjugador + "</td>"
+                          + "<td>"+ addZeroes(Math.round(jugador.golesjugadorporpartido * 100) / 100) + "</td>"
+                          + "<td>"+ addZeroes(Math.round(jugador.eficienciaalltime*100 * 10) / 10) + "%</td>"
+                          + "<td>"+ addZeroes(Math.round(jugador.asistenciaalltime*100 * 10) / 10) + "%</td>"
+                          + "</tr>";
+          }
 
         contentSelection = contentSelection + newLine
       }

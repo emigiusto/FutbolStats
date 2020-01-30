@@ -391,6 +391,13 @@ body{
     color:rgb(98, 161, 255)
 }
 
+
+/* Lineas horizontales */
+
+#matchupSection,#playersSection, #reglas {
+    border-top: 1px solid grey;
+}
+
 /* HEADER */
 #header{
     width: 100%;
@@ -482,13 +489,15 @@ body{
         text-align: center;
         padding:1.8rem;
         margin-bottom:1rem;
-        border-top: 1px solid grey;
         font-weight: 600;
     }
         .posicionestitulo{
             margin-top: 0;
         }
 
+    #contTablaActual{
+        margin-bottom: 1rem;
+    }
     .posicionestable{
         width:80%;
         margin:auto;
@@ -660,7 +669,9 @@ body{
                     font-size: 0.9rem;
                     margin-top: 0.2rem;
                 }
-
+        div.card > img {
+            border-bottom: 1px solid rgba(223, 219, 219, 0.76);
+        }
 
                 /* TABLA SORTABLE */
                 table.sortable tbody {
@@ -821,7 +832,7 @@ body{
     /* PLAYERS SECTION */
 
     #playersSection{
-        width: 80%;
+        width: 90%;
         margin: auto;
     }
     .card-deck {
@@ -839,7 +850,7 @@ body{
             display: flex;
         }
         .card-deck .card {
-            width:17%;
+            width:14%;
             margin-bottom: 1rem;
             cursor: pointer;
         }
@@ -1069,7 +1080,7 @@ body{
             .posicionestable td , .table th {
                 vertical-align: middle;
                 padding: .35rem;
-                font-size: 0.8rem;
+                font-size: 0.75rem;
                 line-height: 0.9rem;
             }
             
@@ -1110,7 +1121,7 @@ body{
                     width: 31%;
                 }
                 .card-deck .card h5 {
-                    font-size: 1rem;
+                    font-size: 0.9rem;
                     line-height: 1.1rem;
                     width: 75%;
                 }
@@ -1139,7 +1150,7 @@ body{
                 }
 
                 .custom-select {
-                    font-size: 0.7rem;
+                    font-size: 0.8rem;
                 }
                 #matchupTable > table {
                     width: 95%;
@@ -1148,6 +1159,20 @@ body{
                 #matchupTable > table th {
                     width: 15%;
                 }
+
+                .col-izq-card {
+                    height: 4.4rem;
+
+                }
+
+        .perfil {
+            width: 70%;
+        }
+
+        .perfil > img {
+            width: 16%;
+            height: 16%;
+        }
 
     /* AWARDS */
     .awarditemindex {
@@ -1180,5 +1205,14 @@ body{
     }
     #reglas > ul {
         width: 100%;
+    }
+
+    #matchupSection {
+        width: 90%;
+    }
+
+
+    #matchupTable td, #matchupTable .table th {
+    font-size: 0.9rem;
     }
 }

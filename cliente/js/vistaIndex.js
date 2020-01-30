@@ -58,7 +58,7 @@ function llenarTablaPosiciones(nombredom,torneoid) {
             
             if (element.asistenciatorneo>=0.4){
                 var lineaTabla = 
-                  '<tr><td scope="row"><a href="jugador.html?id=' + element.jugadorId +'">' + element.nombre + " " +element.apellido 
+                  '<tr><td scope="row"><a href="jugador.html?id=' + element.jugadorId +'">' + element.alias 
                   + '</a></th><td>'+ element.ganados +'</td><td>'
                   + element.perdidos +'</td><td>'
                   + element.empatados +'</td><td>' 
@@ -106,14 +106,13 @@ function cargarJugadoresDeck() {
       var contentSelection = "";
       var newline = ""
       
-
         for (i = 0; i < jugador.length; i++) {
-          
-          newline = '<div class="card" idplayer="'+  jugador[i].jugador_id +'">'
+          if (jugador[i].asistenciaalltime > 0.1) {
+            newline = '<div class="card" idplayer="'+  jugador[i].jugador_id +'">'
                   + '<img src="'+ jugador[i].foto +'" class="card-img-top" alt="...">'
                   + '<div class="card-body">'
                   + '<div class="col-izq-card">'
-                  + '<h5 class="card-title">'+ jugador[i].nombre + ' ' +jugador[i].apellido + '</h5>'
+                  + '<h5 class="card-title">'+ jugador[i].alias + '</h5>'
                   + '<p class="card-text-puesto"><small class="text-muted">'/*+ jugador[i].posicion*/ +'</small></p>'
                   + '<div class="perfil"><p>perfil</p><img src="../img/iconos/index/playercard/user.png" alt=""></div>'
                   + '</div>'
@@ -131,6 +130,10 @@ function cargarJugadoresDeck() {
                   + '<div class="verperfilCard">Ver Perfil</div>'
                   + '</div>'
                   + '</div>'
+          } else {
+            newline = ""
+          }
+          
 
           contentSelection = contentSelection + newline;
 

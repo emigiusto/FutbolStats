@@ -30,7 +30,7 @@ function llenarTablaAllTime() {
               var newLine = "";
             } else {
             var newLine = "<tr>"
-                          + "<td>"+ jugador.nombre + " " + jugador.apellido +"</td>"
+                          + "<td>"+ jugador.alias +"</td>"
                           + "<td>"+ jugador.ganados + "</td>"
                           + "<td>"+ jugador.perdidos + "</td>"
                           + "<td>"+ jugador.empatados + "</td>"

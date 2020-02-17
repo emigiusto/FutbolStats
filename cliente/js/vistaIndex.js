@@ -94,7 +94,7 @@ function cargarJugadoresDeck() {
                 </div>
                 <div class="fila2card">
                     <p>+2</p>
-                    <img src="img/iconos/index/racha/fire.png" alt="">
+                    <img src="../img/iconos/index/racha/fire.png" alt="">
                 </div>
             </div>
         </div>
@@ -137,27 +137,27 @@ function cargarJugadoresDeck() {
 
           contentSelection = contentSelection + newline;
 
-            /*//ACTUALIZO LAS RACHAS
-                $.getJSON(servidor + "/rachaPlayer?jugadorId=" + jugador[i].jugador_id,
-                function(players) {
-                    var racha = players.racha
+            //ACTUALIZO LAS RACHAS
+                $.getJSON(servidor + "/racha/" + jugador[i].jugador_id,
+                function(player) {
+                    var racha = player.racha
                             if (racha>0 && racha<4) {
-                              img = '<img class="rachaicon" src="img/iconos/index/racha/up-arrow.png" alt="">'
+                              img = '<img class="rachaicon" src="../img/iconos/index/racha/up-arrow.png" alt="">'
                             } else if (racha>=4){
-                              img = '<img class="rachaicon" src="img/iconos/index/racha/fire.png" alt="">'
+                              img = '<img class="rachaicon" src="../img/iconos/index/racha/fire.png" alt="">'
                             }
                             else if (racha === 0){
-                              img = '<img class="rachaicon" src="img/iconos/index/racha/right-arrow.png" alt="">'
+                              img = '<img class="rachaicon" src="../img/iconos/index/racha/right-arrow.png" alt="">'
                             }
                             else if (racha < 0 && racha > -3){
-                              img = '<img class="rachaicon" src="img/iconos/index/racha/diagonal-arrow.png" alt="">'
+                              img = '<img class="rachaicon" src="../img/iconos/index/racha/diagonal-arrow.png" alt="">'
                             }
                             else if (racha <= -3){
-                              img = '<img class="rachaicon" src="img/iconos/index/racha/down-arrow.png" alt="">'
+                              img = '<img class="rachaicon" src="../img/iconos/index/racha/down-arrow.png" alt="">'
                             }
 
-                    $("[idplayer="+ players.jugadorId +"] .fila2card").html("<p>" + racha + "</p>" + img)
-                })*/
+                    $("[idplayer="+ player.jugadorId +"] .fila2card").html("<p>" + racha + "</p>" + img)
+                })
         }
         
         $("#jugadoresDeck").html(contentSelection);

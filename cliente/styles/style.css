@@ -878,7 +878,7 @@ body{
                 background-color: blue;
                 color: white;
                 align-items: center;
-                width: 50%;
+                width: 60%;
                 margin-top: 0.8rem;
                 justify-content: center;
                 padding: 0.1rem;
@@ -887,8 +887,8 @@ body{
                 -webkit-border-radius: 3px 3px 3px 3px;
             }
                 .perfil > img{
-                    width:13%;
-                    height:13%;
+                    width:17%;
+                    height:17%;
                     margin-left:6%;
                     margin-right: 3%;
                 }
@@ -929,20 +929,20 @@ body{
                     justify-content: center;
                     margin: auto;
                 }
-                        .fila2card > p{
-                            margin-right: 8%;
+                        #jugadoresDeck div.card-body > div.col-der-card > div.fila2card > p{
+                            margin-right: 2%;
                             font-size: 1.3rem;
                             font-weight: 600;
                         }
-                        .fila2card > img{
-                            width: 30%;
+                        #jugadoresDeck div.card-body > div.col-der-card > div.fila2card > img{
+                            width: 35%;
                             padding-bottom:0.2rem
                         }
 
                 .card-deck .card h5{
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     font-weight: 600;
-                    margin-top: 0.2rem;
+                    margin-top: 0.6rem;
                     margin-bottom: 0.2rem;
                     line-height: 1.2rem;
                 }

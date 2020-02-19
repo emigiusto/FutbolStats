@@ -2,7 +2,7 @@ $(document).ready(iniciarIndex());
 
 function iniciarIndex() {
     $('[data-toggle="tooltip"]').tooltip();
-    llenarTablaPosiciones("#tablePosicionesGeoFutbol > tbody",3);
+    llenarTablaPosiciones("#tablePosicionesGeoFutbol > tbody",torneoactual);
     cargarJugadoresDeck();
 }
 
@@ -50,7 +50,6 @@ function llenarTablaPosiciones(nombredom,torneoid) {
           for (let index = 0; index < jugadorstats.length; index++) {
             
                 var element = jugadorstats[index]
-                
                 if (typeof element.offpower !== 'number')
                     {var offpowerCorr = -1} else { var offpowerCorr = Math.round(element.offpower* 10) / 10;}; 
                 if (typeof element.defpower !== 'number')
@@ -58,7 +57,7 @@ function llenarTablaPosiciones(nombredom,torneoid) {
             
             if (element.asistenciatorneo>=0.4){
                 var lineaTabla = 
-                  '<tr><td scope="row"><a href="jugador.html?id=' + element.jugadorId +'">' + element.alias 
+                  '<tr><td scope="row"><a href="jugador.html?id=' + element.id +'">' + element.alias 
                   + '</a></th><td>'+ element.ganados +'</td><td>'
                   + element.perdidos +'</td><td>'
                   + element.empatados +'</td><td>' 

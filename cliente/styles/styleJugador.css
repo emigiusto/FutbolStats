@@ -59,38 +59,12 @@ body{
             font-size: 2.7rem;
             font-weight: 500;
             padding:1rem;
-            margin-bottom: 2rem;
+            padding-left: 0rem;
         }
-        /* Titulo "Logros equipo" */
-        #logrosEquipo h2{
-            font-size: 1.7rem;
-            margin-left: 1rem;
+        #subtituloAlias{
+            font-size: 1.8rem;
+            font-weight: 500;
         }
-
-        /* Lista de logros */
-        ul#logrosLista{
-            margin-top:1rem;
-            margin-left: 1rem;
-            display: flex;
-            flex-direction: column;
-        }
-            /* Lista de logros li*/
-            ul#logrosLista li{
-                margin-top: 0.6rem;
-                margin-bottom: 0.6rem;
-                width: 100%;
-                width: 95%;
-                line-height: 1.5rem;
-            }
-                /* Lista de logros imágen de premio*/
-                ul#logrosLista li img{
-                    width: 1.9rem;
-                    margin-left:2%;
-                }
-                /* Lista de logros descripción de premio*/
-                ul#logrosLista li span{
-                    margin-left:3%;
-                    font-size: 1.2rem;}
 
     /* SECCION STATS IMPORTANTES */
     #statsimp {
@@ -119,15 +93,21 @@ body{
         .card-deck .card h5{
             font-size: 1.4rem;
             font-weight: 600;
-            width:95%;
+            width:100%;
             text-align: center;
-            margin:auto;
             margin-bottom:0.6rem;
         }
         .card-deck .card p {
             font-size: 1rem;
             margin-top: 0.8rem;
             line-height: 1.3rem;
+        }
+
+        .card-body {
+            flex-direction: column;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            padding:0.5rem
         }
 
 
@@ -153,6 +133,13 @@ body{
         /* GANADOS/PERDIDOS/JUGADOS */
             div#partidosAlltime{
                 display: flex;
+            }
+            div#containerPGyPEAlltime{
+                width: 50%;
+                border: 1px solid rgba(0,0,0,.125);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
                 div#containerPGAlltime{
                     width: 50%;
@@ -241,52 +228,6 @@ body{
                 margin-top:0.4rem;
             }
 
-    /* PRIMERA SECCIÓN */  
-    
-            div#bio{
-                width: 40%;
-                flex: none;
-            }
-                div#bio >div{
-                    padding-left:1.3rem;
-                    padding-right:1.3rem;
-                }
-            div#bio >div >p.valuebox{
-                float:left;
-                width: 50%
-            }
-            #columnbiocontainer{
-                display: flex;
-
-            }
-                #c1bio{
-                    width: 45%
-                }
-                #c2bio{
-                    width: 50%;
-                }
-
-                div.subbio{
-                        width: 100%;
-                    }
-                .valuebox{
-                    display: block;
-                    width: 100%;
-                    margin-bottom: 1rem;
-                }
-                    .valuebox p{
-                        font-size: 1.2rem;
-                        font-weight: 600;
-                        margin-top: 0.5rem;
-                        margin-bottom: 0.5rem;
-                    }
-                    #puesto{
-                        float:left;
-                    }
-                    #altura{
-                        float:left;
-                    }
-
         /* RACHA */
         #rachaactual{
             margin: auto;
@@ -294,20 +235,22 @@ body{
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom:0.8rem;
         }
             #rachaactual > p{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                margin-bottom: 1rem;
             }  
             #rachaactual > p > p{
                 font-size: 1.8rem;
                 text-align: center;
+                font-weight: 600;
             }  
                 #rachaactual> p > img{
                     width: 2.3rem;
-                    height: 1.8rem;
+                    height: 2.2rem;
+                    margin-left: 1.5rem;
                 }  
                 #rachaactual > p >small{
                     width: 100%;
@@ -354,6 +297,8 @@ body{
                 #momentum > p{
                     text-align: center;
                     font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                    
                 }
                 #momentum > small{
                     text-align: center;
@@ -390,36 +335,145 @@ body{
             margin-bottom: 2rem;        
         }
 
-    /* AWARDS */
-    #containerawards{
-        display: flex;
-        width: 80%;
-        margin: auto;
-        flex-wrap: wrap;
-        margin-top:2rem;
-        justify-content: space-around;
-    }
-        .awarditem{
-            width: 12%;
-            margin-bottom:1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-right:2rem
-        }
-            .awarditem > img{
-                width: 60%;
-                margin: auto;
-            }
-            .awarditem > h3{
-                font-size: 1.2rem;
-                font-weight: 600;
-                margin-top: 1rem;
-                text-align: center;
-                line-height: 1.8rem;
-            }
+    /* SECCION SUPERIOR */
 
+    #containerdatospersonales{
+        padding: 2rem;
+        padding-left: 0rem;
+        padding-bottom: 0rem;
+        display: flex;
+        width: 100%;
+    }
+
+    #datosperscol1{
+        width: 50%;
+    }
+    #datosperscol2{
+        width: 50%;
+    }
+    .datostop{
+        margin-bottom:2rem
+    }
+    .datostop>p{
+        margin-bottom:0.8rem;
+        font-size:1.3rem;
+        font-weight: 600;
+    }
+
+    /* FOTO */
+
+    div#fotoPres{
+        width: 35%;
+        text-align: center;
+    }
+    div#fotoPres > img{
+        margin: auto;
+        margin-top: 4rem;
+    }
+
+    /*  PRIMER PANEL   - NO FUNCIONA*/
+    #torneoactual{
+        width: 50%;
+    }
+    div#rachacard{
+        width: 25%;
+    }
+    #momentumcard{
+        width: 25%;
+    }
+        #estetorneo{
+            display: flex;
+  
+        }
+            /*  PANEL TORNEO ACTUAL  */
+             /* COLUMNA 1 */
+                #estetorneocol1{
+                    width: 65%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 0.5rem;
+                
+                }
+                /* PRIMERA COLUMNA EN CUADRO ESTE TORNEO */
+                    #col1cuadroestetorneo{
+                        width: 45%;
+                        display: flex;
+                        flex-direction: column;
+                        border: 1px solid black;
+                        border-right: 0;
+                    }
+                        #jugadosestetorneo{
+                            height: 70%;
+                        }
+                            #asistenciaestetorneo > p{
+                                text-align: center;
+                                font-weight: 600;
+                                margin-bottom: 0.2rem;
+                            }
+                            #asistenciaestetorneo > small{
+                                display: flex;
+                                justify-content: center;
+                            }
+                /* SEGUNDA COLUMNA EN CUADRO ESTE TORNEO */
+                    #col2cuadroestetorneo{
+                        width: 45%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        border: 1px solid black;
+                    }
+                    .subcuadroestetorneo{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        
+                    }
+                        .subcuadroestetorneo >small{
+                            font-size: 1.2rem;
+                        }
+                        /* NUMERO DE PARTIDOS GANADOS/PERDIDOS/ETC EN CUADRO ESTE TORNEO */
+                        #estetorneocol1 .subcuadroestetorneo >p{
+                            font-size:2rem;
+                            font-weight: 600;
+                        }
+                            /* COLORES CUADRO ESTE TORNEO */
+                            #jugadosestetorneo > p{
+                                color: blue;
+                            }
+                            #ganadosestetorneo > p{
+                                color: green;
+                            }
+                            #perdidosestetorneo > p{
+                                color: red;
+                            }
+
+                            /* BORDES CUADRO ESTE TORNEO */
+                            #ganadosestetorneo{
+                                height: 33.33333%;
+                                border-bottom: 1px solid black;
+                            }
+                            #perdidosestetorneo{
+                                height: 33.33333%;
+                            }
+                            #empatadosestetorneo{
+                                height: 33.33333%;
+                                border-bottom: 1px solid black;
+                            }
+                            
+
+            /* COLUMNA 2 */
+                #estetorneocol2{
+                    width: 30%;
+                    margin-left:2%
+                }
+                    .datostorneo{
+                        margin-bottom: 1rem;
+                    }
+                    #estetorneocol2 >div > p{
+                        font-weight: 600;
+                        margin-bottom: 0.3rem;
+                    }
 
 @media only screen and (max-device-width: 567px) {
             
@@ -468,12 +522,6 @@ body{
         width: 100%;
     }
 
-    #rachacard{
-        width: 48%;
-    }
-    #momentumcard{
-        width: 48%;
-    }
     .text-muted {
         font-size: 0.7rem;
     }

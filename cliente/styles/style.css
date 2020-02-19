@@ -1017,7 +1017,7 @@ body{
         width: 100vw
         }
         #logoAndName a p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             line-height: 1rem;
             display: flex;
             flex-direction: column;
@@ -1027,7 +1027,7 @@ body{
             width: 40%;
         }
         #balllogo {
-            width: 14%;
+            width: 10%;
             padding: 0;
             margin: auto;
             margin-left: 0.8rem;

@@ -805,7 +805,7 @@ body{
     #reglas{
         width: 80%;
         margin: auto;
-        margin-bottom:4rem;
+        margin-bottom:2rem;
     }
         #reglas > ul{
                 list-style: disc;
@@ -997,6 +997,38 @@ body{
             transform: translate(-50%, -50%);
             width: 30%;
           }
+
+    
+    #footer{
+        background-color: #000;
+        height: 7.5vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+        #emilianogiusto{
+            width: 50%;
+        }
+            #hechopor{
+                width: 80%;
+                margin: auto;
+            }
+        #links{
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        #github{
+            width: 30%;
+        }
+            #hechopor{
+                color:white;
+                font-size: 1.1rem;
+            }
+            #links > a > img{
+                width: 21%;
+                padding: 2%;
+            }
 /* ------------------------------------------------------------------- */
 /* ------------------------------------------------------------------- */
 /* ------------------------------------------------------------------- */
@@ -1218,4 +1250,29 @@ body{
     #jugadoresDeck div.card-body > div.col-der-card > div.fila2card > img{
         width: 33%;
     }
+
+    /* FOOTER */
+
+    #emilianogiusto {
+        width: 70%;
+    }
+    #links {
+        width: 30%;
+        justify-content: center;
+    }
+
+    #hechopor {
+        font-size: 1rem;
+    }
+
+    #links > a > img {
+        width: 80%;
+        padding: 2%;
+    }
+
+    #footer {
+        height: 6vh;
+    }
+
+
 }

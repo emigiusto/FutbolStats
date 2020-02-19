@@ -88,7 +88,7 @@ function iniciarJugador() {
                         //$('#PJult6 > p').html(jugador.totalmomentum|| 0);
                     $('#alturajug > p').html(addZeroes(Math.round(jugador.altura* 100) / 100) + " m");
                     $('#posicion > p').html(jugador.posicion);
-                    $('#frase > p').html(jugador.frase);
+                    $('#frase > p').html(divisorfrases(jugador.frase));
                         //FormateandoFecha
                         var d = new Date(jugador.fechanacimiento);
                         let fechanac_format = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
@@ -123,7 +123,6 @@ function iniciarJugador() {
         //ULTIMOS 20
         $.getJSON(servidor + "/ultimos20/" + idPlayer,
         function(ultimospartidos) {
-            console.log(ultimospartidos)
             var tablacompleta = '';
             for (let index = 0; index < ultimospartidos.ultimos20.length; index++) {
                 const partido = ultimospartidos.ultimos20[index];
@@ -149,6 +148,7 @@ function iniciarJugador() {
             for (let index = 0; index < jugadorstats.length; index++) {
                 const jugadorPosicion = jugadorstats[index];
                 if (jugadorPosicion.id == idPlayer) {
+                    console.log(jugadorPosicion)
                     var puntostorneo = jugadorPosicion.ganados * 3 + jugadorPosicion.empatados
                     var partidostotales = jugadorPosicion.ganados+ jugadorPosicion.perdidos+ jugadorPosicion.empatados
                     $('#jugadosestetorneo > p').html(partidostotales);
@@ -156,6 +156,7 @@ function iniciarJugador() {
                     $('#ganadosestetorneo > p').html(jugadorPosicion.ganados);
                     $('#empatadosestetorneo > p').html(jugadorPosicion.empatados);
                     $('#perdidosestetorneo > p').html(jugadorPosicion.perdidos);
+                    $('#golesestetorneo > p').html(jugadorPosicion.golesjugadortorneo)
                     if (jugadorPosicion.ganados+ jugadorPosicion.perdidos+ jugadorPosicion.empatados > 0) {
                         $('#estadoestetorneo > p').html("Activo");
                         } else {
@@ -207,48 +208,13 @@ function addZeroes( value ) {
     }
     return new_value;
   }
-  
 
-  function offdefpower(params) {
-      //SUMO PUNTOS A FAVOR Y CONTRA DE TODOS LOS QUE TENGAN >= 0.4 DE asistenciaalltime
-      var puntosfavorpartido = [];
-      var puntoscontrapartido = [];
-      
-      for (let index = 0; index < jugadorstats.length; index++) {
-        
-          if (jugadorstats[index].asistenciaalltime >= 0.4){
-            puntosfavorpartido.push(jugadorstats[index].PA);
-            puntoscontrapartido.push(jugadorstats[index].PAC);
-          }
-      }
-
-      //Calculo minimos y maximos para Of y Def Power
-      var minPF = Math.min.apply(null, puntosfavorpartido);
-      var maxPF = Math.max.apply(null, puntosfavorpartido);
-      var rangePF = maxPF - minPF
-      
-      var minPC = Math.min.apply(null, puntoscontrapartido);
-      var maxPC = Math.max.apply(null, puntoscontrapartido);
-      var rangePC = maxPC - minPC
-
-
-          //Recorro players y aplico a resultado los offpower y defpower
-    for (let index = 0; index < jugadorstats.length; index++) {
-        //OFF Y DEF POWER
-        if (jugadorstats[index].asistenciaalltime < 0.4) {
-                jugadorstats[index].offpower = -1
-                jugadorstats[index].defpower = -1
-        } else {
-            jugadorstats[index].offpower = ((jugadorstats[index].PA-minPF)/rangePF)*10
-            jugadorstats[index].defpower = -((jugadorstats[index].PAC-maxPC)/rangePC)*10
-        }
+  function divisorfrases(fraseinicial) {
+    var arrayfrases = fraseinicial.split(";");
+    var cadena = arrayfrases[0]
+    for (let index = 1; index < arrayfrases.length; index++) {
+        const element = arrayfrases[index];
+        cadena = cadena + '<br>'+'<br>' +String(element)
     }
-
-        for (let index = 0; index < jugadorstats.length; index++) {
-        var element = jugadorstats[index]
-        if (typeof element.offpower !== 'number')
-            {var offpowerCorr = -1} else { var offpowerCorr = Math.round(element.offpower* 10) / 10;}; 
-        if (typeof element.defpower !== 'number')
-            {var defpowerCorr = -1} else { var defpowerCorr = Math.round(element.defpower* 10) / 10;}; 
-        }
-}
+    return cadena
+  }

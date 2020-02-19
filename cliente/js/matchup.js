@@ -90,6 +90,10 @@ function calcularMatchup() {
                 $('#p2result').html(p2Counter);
                 $('#p1name').html(player1Nombre);
                 $('#p2name').html(player2Nombre);
+
+                $('#p1name').attr("href", "jugador.html?id="+player1id);
+                $('#p2name').attr("href", "jugador.html?id="+player2id);
+
                 $('#player1 >img').attr("src",player1Foto);
                 $('#player2 > img').attr("src",player2Foto);
             } else {
@@ -97,6 +101,10 @@ function calcularMatchup() {
                 $('#p2result').html(p1Counter);
                 $('#p1name').html(player2Nombre);
                 $('#p2name').html(player1Nombre);
+
+                $('#p1name').attr("href", "jugador.html?id="+player2id);
+                $('#p2name').attr("href", "jugador.html?id="+player1id);
+
                 $('#player1 >img').attr("src",player2Foto);
                 $('#player2 > img').attr("src",player1Foto);
             }

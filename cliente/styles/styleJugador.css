@@ -492,20 +492,31 @@ body{
                     margin-left:2%
                 }
                     .datostorneo{
-                        margin-bottom: 1rem;
+                        margin-bottom: 0.5rem;
                     }
                     #estetorneocol2 > div.datostorneo > p{
-                        font-size: 1.2rem;
+                        font-size: 1.1rem;
                         text-align: center;
+                        margin-top: 0.2rem;
                     }
                     #estetorneocol2 > div.datostorneo > small{
                         display: flex;
                         justify-content: center;
+                        font-size: 0.9rem;
                     }
                     #estetorneocol2 >div > p{
                         font-weight: 600;
                         margin-bottom: 0.3rem;
                     }
+        /*TABLA ULTIMOS 20 */
+        #ult20table > table.table-hover td {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        #ult20table > table th {
+            font-size: 1.2rem;
+            
+        }
 
 @media only screen and (max-device-width: 567px) {
             

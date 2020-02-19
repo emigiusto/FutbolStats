@@ -69,15 +69,19 @@ table.torneos{
     }
     #contenedorTablasTorneos tbody > tr > td {
         font-size: 0.75rem;
-        line-height: 1.3px;
-        padding: .6rem;
+        padding: .5rem;
     }
     #contenedorTablasTorneos thead > tr > th {
         font-size: 0.75rem;
-        padding: .5rem;
+        padding: .45rem;
     }
     table.sortable tbody tr::before{
         font-size: 0.75rem;
+    }
+
+    #contenedorTablasTorneos > div> div > table > tbody > tr > td:nth-child(1){
+        padding-left: .2rem;
+        padding-right: .2rem
     }
 
 }

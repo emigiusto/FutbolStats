@@ -9,7 +9,7 @@ $(document).ready(function() {
 
             var contentSelection = '<option selected>Choose...</option>'
             for (i = 0; i < jugadores.length; i++) {
-                contentSelection = contentSelection + '<option value="'+ jugadores[i].jugador_id  +'">' + jugadores[i].nombre + ' ' +jugadores[i].apellido + '</option>'
+                contentSelection = contentSelection + '<option value="'+ jugadores[i].jugador_id  +'">' + jugadores[i].alias + '</option>'
                 $(".custom-select").html(contentSelection)
             }
         });

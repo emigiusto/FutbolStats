@@ -1177,26 +1177,7 @@ body{
             height: 16%;
         }
 
-    /* AWARDS */
-    .awarditemindex {
-        width: 48%;
-        height: 14.5rem;
-    }
-
-    .awarditemindex > img {
-        width: 50%;
-    }
-    .awarditemindex > h4 {
-        height: 3.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .awarditemindex > h3 {
-        height: 3.5rem;
-        width: 90%;
-    }
-
+    /* REGLAS */
 
     #reglas > ul > li {
         font-size: 1rem;
@@ -1210,10 +1191,11 @@ body{
         width: 100%;
     }
 
+    /* MATCHUPS */
+
     #matchupSection {
         width: 90%;
     }
-
 
     #matchupTable td, #matchupTable .table th {
     font-size: 0.9rem;
@@ -1224,5 +1206,16 @@ body{
         font-size: 16px;
         line-height: 20px;
         top: 52%;
+    }
+
+
+    /* CARD JUGADOR */
+
+    #jugadoresDeck div.card-body > div.col-der-card > div.fila2card > p{
+        margin-right: 10%;
+        font-size: 1rem;
+    }
+    #jugadoresDeck div.card-body > div.col-der-card > div.fila2card > img{
+        width: 33%;
     }
 }

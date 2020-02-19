@@ -71,6 +71,8 @@ function iniciarJugador() {
                     $('#containerPGAlltime > p').html(jugador.ganados);
                     $('#containerPPAlltime > p').html(jugador.perdidos);
                     $('#containerPJAlltime > p').html(jugador.totales);
+                    $('#containerPEAlltime > p').html(jugador.empatados);
+                    
                     //OFF Y DEF POWER
                         if (jugador.offpower === "No Calculado") {
                             $('#containerOP > p').html("-")
@@ -147,7 +149,6 @@ function iniciarJugador() {
             for (let index = 0; index < jugadorstats.length; index++) {
                 const jugadorPosicion = jugadorstats[index];
                 if (jugadorPosicion.id == idPlayer) {
-
                     var puntostorneo = jugadorPosicion.ganados * 3 + jugadorPosicion.empatados
                     var partidostotales = jugadorPosicion.ganados+ jugadorPosicion.perdidos+ jugadorPosicion.empatados
                     $('#jugadosestetorneo > p').html(partidostotales);

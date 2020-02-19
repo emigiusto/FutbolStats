@@ -136,7 +136,18 @@ body{
             }
             
                 div#containerPGAlltime{
-                    width: 50%;
+                        width: 100%;
+                        height: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
+                        align-items: center;
+                        border: 1px solid rgba(0,0,0,.125);
+                }
+                div#containerPEAlltime{
+                    width: 100%;
+                    height: 50%;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -144,6 +155,7 @@ body{
                     align-items: center;
                     border: 1px solid rgba(0,0,0,.125);
                 }
+
                     div#containerPGAlltime > h3{
                         font-size: 1.2rem;
                     }
@@ -153,6 +165,24 @@ body{
                         margin-top:0.4rem;
                         color: green
                     }
+                    div#containerPEAlltime > h3{
+                        font-size: 1.2rem;
+                    }
+                    div#containerPEAlltime > p{
+                        font-size: 2.2rem;
+                        font-weight: 600;
+                        margin-top:0.4rem;
+                        color: rgb(0, 0, 0)
+                    }
+
+                    div#containerPGyPEAlltime {
+                        width: 50%;
+                        border: 1px solid rgba(0,0,0,.125);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+
                 div#containerPPyPJAlltime{
                     width: 50%;
                     border: 1px solid rgba(0,0,0,.125);
@@ -173,12 +203,12 @@ body{
                         padding-bottom:0.5rem
                     }
                         div#containerPPAlltime > h3{
-                            font-size: 1rem;
+                            font-size: 1.2rem;
                         }
                         div#containerPPAlltime > p{
-                            font-size: 1.8rem;
+                            font-size: 2.2rem;
                             font-weight: 600;
-                            margin-top:0.1rem;
+                            margin-top: 0.4rem;
                             color: red
                         }
                     div#containerPJAlltime{
@@ -194,12 +224,12 @@ body{
                         
                     }
                         div#containerPJAlltime > h3{
-                            font-size: 1rem;
+                            font-size: 1.2rem;
                         }
                         div#containerPJAlltime > p{
-                            font-size: 1.8rem;
+                            font-size: 2.2rem;
                             font-weight: 600;
-                            margin-top:0.1rem;
+                            margin-top: 0.4rem;
                             color: blue
                         }
         /* OP y DP */
@@ -237,13 +267,13 @@ body{
                 margin-bottom: 1rem;
             }  
             #rachaactual > p > p{
-                font-size: 1.8rem;
+                font-size: 2rem;
                 text-align: center;
                 font-weight: 600;
             }  
                 #rachaactual> p > img{
-                    width: 2.3rem;
-                    height: 2.2rem;
+                    width: 2.6rem;
+                    height: 2.5rem;
                     margin-left: 1.5rem;
                 }  
                 #rachaactual > p >small{
@@ -463,6 +493,14 @@ body{
                 }
                     .datostorneo{
                         margin-bottom: 1rem;
+                    }
+                    #estetorneocol2 > div.datostorneo > p{
+                        font-size: 1.2rem;
+                        text-align: center;
+                    }
+                    #estetorneocol2 > div.datostorneo > small{
+                        display: flex;
+                        justify-content: center;
                     }
                     #estetorneocol2 >div > p{
                         font-weight: 600;

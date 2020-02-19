@@ -20,7 +20,7 @@ body{
 }
 
 table.torneos{
-    width: 70%;
+    width: 100%;
     margin: auto;
     margin-bottom:2rem;
 }
@@ -29,7 +29,7 @@ table.torneos{
             counter-reset: sortabletablescope;
         }
         table.sortable thead tr::before {
-            content: "";
+            content: "#";
             display: table-cell;
         }
         table.sortable tbody tr::before {
@@ -63,8 +63,21 @@ table.torneos{
         } 
 
 @media only screen and (max-device-width: 567px) {
-    table.torneos {
-        width: 100%;
+    #divisioncentral {
+        width: 90%;
+        margin: auto;
+    }
+    #contenedorTablasTorneos tbody > tr > td {
+        font-size: 0.75rem;
+        line-height: 1.3px;
+        padding: .6rem;
+    }
+    #contenedorTablasTorneos thead > tr > th {
+        font-size: 0.75rem;
+        padding: .5rem;
+    }
+    table.sortable tbody tr::before{
+        font-size: 0.75rem;
     }
 
 }

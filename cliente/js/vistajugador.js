@@ -91,7 +91,7 @@ function iniciarJugador() {
                     $('#frase > p').html(divisorfrases(jugador.frase));
                         //FormateandoFecha
                         var d = new Date(jugador.fechanacimiento);
-                        let fechanac_format = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
+                        let fechanac_format = (d.getDate()+1)+ "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
                     $('#fechanacim > p').html(fechanac_format);
                     $('#lugarnacim > p').html(jugador.lugarnacimiento);
                     $('#mejorjugada > p').html(jugador.mejorjugada);
@@ -128,7 +128,7 @@ function iniciarJugador() {
                 const partido = ultimospartidos.ultimos20[index];
                             //FormateandoFecha
                             var d = new Date(partido.fecha);
-                            let formatted_date = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
+                            let formatted_date = (d.getDate()+1) + "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
                 var nuevalinea = '<tr>'
                         + '<td>' + formatted_date +'</td>'
                         + '<td>' + partido.resultado +'</td>'
@@ -192,29 +192,3 @@ function iniciarJugador() {
 
 
 
-
-function addZeroes( value ) {
-    //set everything to at least two decimals; removs 3+ zero decimasl, keep non-zero decimals
-    var new_value = value*1; //removes trailing zeros
-    new_value = new_value+''; //casts it to string
-  
-    pos = new_value.indexOf('.');
-    if (pos==-1) new_value = new_value + '.0';
-    else {
-        var integer = new_value.substring(0,pos);
-        var decimals = new_value.substring(pos+1);
-        while(decimals.length<1) decimals=decimals+'0';
-        new_value = integer+'.'+decimals;
-    }
-    return new_value;
-  }
-
-  function divisorfrases(fraseinicial) {
-    var arrayfrases = fraseinicial.split(";");
-    var cadena = arrayfrases[0]
-    for (let index = 1; index < arrayfrases.length; index++) {
-        const element = arrayfrases[index];
-        cadena = cadena + '<br>'+'<br>' +String(element)
-    }
-    return cadena
-  }

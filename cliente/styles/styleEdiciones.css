@@ -64,7 +64,7 @@ table.torneos{
 
 @media only screen and (max-device-width: 567px) {
     #divisioncentral {
-        width: 90%;
+        width: 95%;
         margin: auto;
     }
     #contenedorTablasTorneos tbody > tr > td {

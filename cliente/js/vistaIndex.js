@@ -57,11 +57,11 @@ function llenarTablaPosiciones(nombredom,torneoid) {
             
             if (element.asistenciatorneo>=0.4){
                 var lineaTabla = 
-                  '<tr><td scope="row"><a href="jugador.html?id=' + element.id +'">' + element.alias 
-                  + '</a></th><td>'+ element.ganados +'</td><td>'
-                  + element.perdidos +'</td><td>'
-                  + element.empatados +'</td><td>' 
+                  '<tr><td scope="row"><a href="jugador.html?id=' + element.id +'">' + element.alias + '</a></th><td>'
                   + element.totales + '</td><td>' 
+                  + element.ganados +'</td><td>'
+                  + element.empatados +'</td><td>' 
+                  + element.perdidos +'</td><td>'
                   + element.puntos + '</td><td>' 
                   + Math.round(element.puntosporpartido* 100) / 100 + '</td><td>'
                   + element.golesjugadortorneo + '</td><td>'

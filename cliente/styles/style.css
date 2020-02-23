@@ -397,8 +397,12 @@ body{
 
 /* Lineas horizontales */
 
-#matchupSection,#playersSection, #reglas {
+#matchupSection, #reglas {
     border-top: 1px solid grey;
+}
+
+#matchupSection{
+    border-bottom: 1px solid grey;
 }
 
 /* HEADER */

@@ -31,10 +31,10 @@ function llenarTablaAllTime() {
             } else {
             var newLine = "<tr>"
                           + "<td>"+ jugador.alias +"</td>"
-                          + "<td>"+ jugador.ganados + "</td>"
-                          + "<td>"+ jugador.perdidos + "</td>"
-                          + "<td>"+ jugador.empatados + "</td>"
                           + "<td>"+ jugador.totales + "</td>"
+                          + "<td>"+ jugador.ganados + "</td>"
+                          + "<td>"+ jugador.empatados + "</td>"
+                          + "<td>"+ jugador.perdidos + "</td>"
                           + "<td>"+ addZeroes(Math.round(jugador.puntosporpartido * 100) / 100) + "</td>"
                           + "<td>"+ jugador.golesjugador + "</td>"
                           + "<td>"+ addZeroes(Math.round(jugador.golesjugadorporpartido * 100) / 100) + "</td>"

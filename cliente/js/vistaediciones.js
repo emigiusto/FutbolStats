@@ -55,7 +55,7 @@ $.getJSON(servidor + "/torneos/'"+ tipotorneo + "'",
                         console.log()
                         var principioTorneo = '<h1 class="tituloPrincipal">' + resultado.torneos[index].nombre + '</h1><div class="panel panel-default">'
                                             + '<div class="panel-body"><table class="table table-striped table-hover sortable torneos"><thead><tr>'
-                                            + '<th>Alias</th><th data-toggle="tooltip" title="Partidos Ganados" class="sorttable_numeric">PG</th><th data-toggle="tooltip" title="Partidos Perdidos" class="sorttable_numeric">PP</th><th data-toggle="tooltip" title="Partidos Empatados" class="sorttable_numeric">PE</th><th data-toggle="tooltip" title="Partidos Jugados" class="sorttable_numeric">PJ</th><th data-toggle="tooltip" title="Puntos" class="sorttable_numeric">P</th><th data-toggle="tooltip" title="Puntos por partido promedio" class="sorttable_numeric">PPP</th><th data-toggle="tooltip" title="Goles totales Individuales" class="sorttable_numeric">GI</th><th data-toggle="tooltip" title="Goles Individuales promedio por partido" class="sorttable_numeric">GIP</th><th data-toggle="tooltip" title="Porcentaje de victorias de esta temporada" class="sorttable_numeric">%PG</th><th data-toggle="tooltip" title="Asistencia de esta temporada">A</th>'
+                                            + '<th>Alias</th><th data-toggle="tooltip" title="Partidos Jugados" class="sorttable_numeric">PJ</th><th data-toggle="tooltip" title="Partidos Ganados" class="sorttable_numeric">PG</th><th data-toggle="tooltip" title="Partidos Empatados" class="sorttable_numeric">PE</th><th data-toggle="tooltip" title="Partidos Perdidos" class="sorttable_numeric">PP</th><th data-toggle="tooltip" title="Puntos" class="sorttable_numeric">P</th><th data-toggle="tooltip" title="Puntos por partido" class="sorttable_numeric">PRO</th><th data-toggle="tooltip" title="Goles totales Individuales" class="sorttable_numeric">GI</th><th data-toggle="tooltip" title="Goles Individuales promedio por partido" class="sorttable_numeric">GIP</th><th data-toggle="tooltip" title="Porcentaje de victorias de esta temporada" class="sorttable_numeric">%PG</th><th data-toggle="tooltip" title="Asistencia de esta temporada">A</th>'
                                             + '</thead><tbody>'
                         var contenidoMedio = ''
                         
@@ -63,10 +63,10 @@ $.getJSON(servidor + "/torneos/'"+ tipotorneo + "'",
                                 if (playersPorTorneo[i].asistenciatorneo > 0.12) {
                                 contenidoMedio = contenidoMedio + '<tr>'
                                                 + '<td>' + playersPorTorneo[i].alias +'</td>'
-                                                + '<td>' + playersPorTorneo[i].ganados +'</td>'
-                                                + '<td>' + playersPorTorneo[i].perdidos +'</td>'
-                                                + '<td>' + playersPorTorneo[i].empatados +'</td>'
                                                 + '<td>' + playersPorTorneo[i].totales +'</td>'
+                                                + '<td>' + playersPorTorneo[i].ganados +'</td>'
+                                                + '<td>' + playersPorTorneo[i].empatados +'</td>'
+                                                + '<td>' + playersPorTorneo[i].perdidos +'</td>'
                                                 + '<td>' + playersPorTorneo[i].puntos +'</td>'
                                                 + '<td>' + Math.round(playersPorTorneo[i].puntosporpartido* 100) / 100+'</td>'
                                                 + '<td>' + playersPorTorneo[i].golesjugadortorneo +'</td>'

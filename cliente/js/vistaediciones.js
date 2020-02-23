@@ -60,7 +60,7 @@ $.getJSON(servidor + "/torneos/'"+ tipotorneo + "'",
                         var contenidoMedio = ''
                         
                             for (let i = 0; i < playersPorTorneo.length; i++) {
-                                if (playersPorTorneo[i].asistenciatorneo > 0.12) {
+                                if (playersPorTorneo[i].asistenciatorneo > 0.40) {
                                 contenidoMedio = contenidoMedio + '<tr>'
                                                 + '<td>' + playersPorTorneo[i].alias +'</td>'
                                                 + '<td>' + playersPorTorneo[i].totales +'</td>'

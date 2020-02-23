@@ -35,7 +35,7 @@ function llenarTablaAllTime() {
                           + "<td>"+ jugador.ganados + "</td>"
                           + "<td>"+ jugador.empatados + "</td>"
                           + "<td>"+ jugador.perdidos + "</td>"
-                          + "<td>"+ addZeroes(Math.round(jugador.puntosporpartido * 100) / 100) + "</td>"
+                          + "<td>"+ addZeroes(Math.round(jugador.puntosporpartido * 1000) / 1000) + "</td>"
                           + "<td>"+ jugador.golesjugador + "</td>"
                           + "<td>"+ addZeroes(Math.round(jugador.golesjugadorporpartido * 100) / 100) + "</td>"
                           + "<td>"+ addZeroes(Math.round(jugador.eficienciaalltime*100 * 10) / 10) + "%</td>"
@@ -48,7 +48,7 @@ function llenarTablaAllTime() {
 
     $(".alltime > tbody").html(contentSelection);
 
-    var myTH = document.getElementsByTagName("th")[1];
+    var myTH = document.getElementsByTagName("th")[5];
               sorttable.innerSortFunction.apply(myTH, []);
               sorttable.innerSortFunction.apply(myTH, []);
     })

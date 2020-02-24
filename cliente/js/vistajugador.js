@@ -190,5 +190,16 @@ function iniciarJugador() {
 }
 
 
+function divisorfrases(fraseinicial) {
+    var arrayfrases = fraseinicial.split(";");
+    var cadena = '" '+ arrayfrases[0] + ' "'
+    for (let index = 1; index < arrayfrases.length; index++) {
+        const element =  '"' + arrayfrases[index] + ' "'
+        cadena = cadena + '<br>'+'<br>' +String(element)
+    }
+    return cadena
+  }
+
+
 
 

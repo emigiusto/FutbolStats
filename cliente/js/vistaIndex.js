@@ -123,11 +123,11 @@ function cargarJugadoresDeck() {
                   + '<p></p>'
                   + '<img src="../img/iconos/index/racha/fire.png" alt="">'
                   + '</div></div></div>'
-                  + '<div class="overlay">'
+                  + '<a href="jugador.html?id=' + jugador[i].jugador_id +'"><div class="overlay">'
                   + '<img class="userCard" src="../img/iconos/index/playercard/user.png" alt="">'
                   + '<div class="text-player">'+ jugador[i].nombre + ' ' +jugador[i].apellido +'</div>'
                   + '<div class="verperfilCard">Ver Perfil</div>'
-                  + '</div>'
+                  + '</div></a>'
                   + '</div>'
           } else {
             newline = ""
@@ -161,10 +161,12 @@ function cargarJugadoresDeck() {
         
         $("#jugadoresDeck").html(contentSelection);
 
-        $("div.card").click(function(e) {
+
+        //CAMBIAR!
+       /* $("div.card").click(function(e) {
           var idPlayer = (this).getAttribute("idplayer")
           window.location.replace("jugador.html?id=" + idPlayer);
-        })
+        })*/
       });
 }
 

@@ -87,14 +87,30 @@ function iniciarJugador() {
                         //$('#PPult6 > p').html(jugador.perdidosmomentum|| 0);
                         //$('#PJult6 > p').html(jugador.totalmomentum|| 0);
                     $('#alturajug > p').html(addZeroes(Math.round(jugador.altura* 100) / 100) + " m");
-                    $('#posicion > p').html(jugador.posicion);
-                    $('#frase > p').html(divisorfrases(jugador.frase));
+
+                    if (jugador.posicion !== null) {
+                        $('#posicion > p').html(jugador.posicion);
+                    } else {$('#posicion > p').html('-');}
+
+
+                    if (jugador.frase !== null) {
+                        $('#frase > p').html(divisorfrases(jugador.frase));
+                    }else {$('#frase > p').html('-');}
+                    
+                    if (jugador.fechanacimiento!==null) {
                         //FormateandoFecha
                         var d = new Date(jugador.fechanacimiento);
                         let fechanac_format = (d.getDate()+1)+ "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
-                    $('#fechanacim > p').html(fechanac_format);
-                    $('#lugarnacim > p').html(jugador.lugarnacimiento);
-                    $('#mejorjugada > p').html(jugador.mejorjugada);
+                        $('#fechanacim > p').html(fechanac_format);
+                    } else {$('#fechanacim > p').html('-');}
+                        
+                    if (jugador.lugarnacimiento !== null) {
+                        $('#lugarnacim > p').html(jugador.lugarnacimiento);
+                    } else {$('#lugarnacim > p').html('-');}
+
+                    if (jugador.mejorjugada !== null) {
+                        $('#mejorjugada > p').html(jugador.mejorjugada);
+                    } else {$('#mejorjugada > p').html('-');}
                 }
             }
         })

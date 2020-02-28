@@ -66,7 +66,7 @@ function iniciarJugador() {
             {var defpowerCorr = -1} else { var defpowerCorr = Math.round(element.defpower* 10) / 10;}; 
         }
 
-                    $('#eficienciaAlltime > p').html(addZeroes(Math.round(jugador.eficienciaalltime*10000) / 100)+ "%"); 
+                    $('#eficienciaAlltime > p').html(addZeroes(Math.round(jugador.puntosporpartido*1000) / 1000)); 
                     $('#asistenciaAlltime > p').html(addZeroes(Math.round(jugador.asistenciaalltime*10000) / 100)+ "%"); 
                     $('#containerPGAlltime > p').html(jugador.ganados);
                     $('#containerPPAlltime > p').html(jugador.perdidos);

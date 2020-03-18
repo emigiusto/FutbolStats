@@ -179,7 +179,7 @@ function iniciarJugador() {
                             $('#estadoestetorneo > p').html("No Activo");
                     }
                     
-                    $('#promedioestetorneo > p').html(Math.round(puntostorneo/partidostotales*100) / 10);
+                    $('#promedioestetorneo > p').html(Math.round(puntostorneo/partidostotales*100) / 100);
                     $('#porcentajeganados > p').html((Math.round(jugadorPosicion.ganados/partidostotales*1000) / 10) + '%');
                     $('#puntosestetorneo > p').html(puntostorneo);
                 }

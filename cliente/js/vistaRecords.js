@@ -26,7 +26,7 @@ function llenarTablaAllTime() {
       var contentSelection = "";
       for (let index = 0; index < data.length; index++) {
           var jugador = data[index];
-            if (jugador.asistenciaalltime <= 0.1) {
+            if (jugador.asistenciaalltime <= 0.2) {
               var newLine = "";
             } else {
             var newLine = "<tr>"

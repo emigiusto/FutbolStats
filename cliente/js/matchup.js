@@ -7,11 +7,13 @@ $(document).ready(function() {
             //Borro los contenedores de opciones
             $(".custom-select").html('');
 
-            var contentSelection = '<option selected>Choose...</option>'
-            for (i = 0; i < jugadores.length; i++) {
-                contentSelection = contentSelection + '<option value="'+ jugadores[i].jugador_id  +'">' + jugadores[i].alias + '</option>'
-                $(".custom-select").html(contentSelection)
-            }
+                var contentSelection = '<option selected>Choose...</option>'
+                for (i = 0; i < jugadores.length; i++) {
+                    if (jugadores[i].asistenciaalltime>=0.1){ //FILTRO JUGADORES A MOSTRAR EN MATCHUPS POR ASISTENCIA
+                        contentSelection = contentSelection + '<option value="'+ jugadores[i].jugador_id  +'">' + jugadores[i].alias + '</option>'
+                        $(".custom-select").html(contentSelection)
+                    }
+                }
         });
         //Aplico eventos a botones
         $('#calcularMatchup').click(calcularMatchup);
